@@ -8,7 +8,7 @@ Feature: API---  Auth - To update vendor fields for seller--  put--  /user/vendo
     When User is able to log into application
       | email                             | password    |
       | vikrant.singh@successive.tech     | HaiVikki12  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user click enable or disable button to update for Brand information, Shipping information and Payment information fields
     | isShipping     | isBranding    | isPayment |
     | <isShipping>   | <isBranding>  | <isPayment> |
@@ -30,7 +30,7 @@ Feature: API---  Auth - To update vendor fields for seller--  put--  /user/vendo
     When User is able to log into application
       | email                             | password    |
       | systemadmin@marketcube.io         | 123456789   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user click enable or disable button to update for Brand information, Shipping information and Payment information fields
       | isShipping     | isBranding    | isPayment |
       | <isShipping>   | <isBranding>| <isPayment> |
@@ -54,7 +54,7 @@ Feature: API---  Auth - To update vendor fields for seller--  put--  /user/vendo
     When User is able to log into application
       | email                                 | password     |
       | vikrant.singh@successive.tech         | 1234567890   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user click enable or disable button to update for Brand information, Shipping information and Payment information fields
       | isShipping     | isBranding    | isPayment |
       | <isShipping>   | <isBranding>| <isPayment> |
