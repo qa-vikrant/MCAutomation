@@ -1,0 +1,46 @@
+Index: src/test/java/net/mc/tools/steps/api/RegisterSupplierSteps.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/net/mc/tools/steps/api/RegisterSupplierSteps.java	(date 1590422945938)
++++ src/test/java/net/mc/tools/steps/api/RegisterSupplierSteps.java	(date 1590422945938)
+@@ -7,7 +7,6 @@
+ import net.mc.tools.models.registerSupplier.request.Brand;
+ import net.mc.tools.models.registerSupplier.request.RegisterSupplierRequestModel;
+ import net.mc.tools.models.registerSupplier.response.RegisterSupplierResponseModel;
+-import net.mc.tools.models.token.TokenMessageRequestModel;
+ import net.mc.tools.services.auth.RegisterSupplierService;
+ import net.mc.tools.utilities.RandomGenerator;
+ import org.junit.Assert;
+@@ -57,14 +56,6 @@
+ 
+     }
+ 
+-    @When("^user make a request to register new supplier with incorrect/blank token field in form of without login credentials")
+-    public void user_make_a_request_to_register_supplier_with_InvalidToken(List<TokenMessageRequestModel> tokenMessageRequestModelList)
+-    {
+-        registerSupplierRequestModel.setBrand(brand);
+-        jsonResponse = RegisterSupplierService.registerSupplier(registerSupplierRequestModel, tokenMessageRequestModelList.get(0).gettoken());
+-
+-    }
+-
+     @Then("^new vendor should be registered successfully into the system$")
+     public void userShouldBeRegister()
+     {
+Index: src/test/resources/features/api/authRegistration/RegisterSupplier.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/api/authRegistration/RegisterSupplier.feature	(date 1590423829861)
++++ src/test/resources/features/api/authRegistration/RegisterSupplier.feature	(date 1590423829861)
+@@ -140,7 +140,7 @@
+     And user enters details of new vendor
+       | email          | brandName   | firstName   | lastName   | phoneNumber   | address         | city    | country   |  pinCode   | isReadOnly   | isOtp   | isVerified   | isVendor   | password   |
+       | vikrant.singh+ | Testing     | Vikrant     | Singh      | 9898989898    | testing address | Noida   | India     | 201301     | false        | true    | true         | true       | Mohit@1989 |
+-    When user make a request to register new supplier with incorrect/blank token field in form of without login credentials
++    When user make a request to register supplier with incorrect/blank token field in form of without login credentials
+       |  token                      |
+       | <token>                     |
+     Then user should not be able to register new supplier and user should get validation error message
