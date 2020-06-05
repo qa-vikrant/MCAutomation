@@ -16,7 +16,7 @@ Feature:  API --Auth -- Login a User--  post---  /user/login
   Scenario: Login with valid registered user details as a Vendor
     When User enters email and password
       | email                             | password       |
-      | vikrant.singh@successive.tech     | 1234567890     |
+      | vikrant.singh+10@successive.tech  | 1234567890     |
     Then User should be able to login to the system and now User will Land on Home Page
 
 
@@ -48,7 +48,7 @@ Feature:  API --Auth -- Login a User--  post---  /user/login
 
   Scenario: We create a login scenario that is used by all api for testing their functionality
     When User is able to log into application
-      | email                                 | password     |
+      | email                                 | password       |
       | vikrant.singh+100@successive.tech     | 123456789      |
     Then User should be able to login to the system and store token
 
