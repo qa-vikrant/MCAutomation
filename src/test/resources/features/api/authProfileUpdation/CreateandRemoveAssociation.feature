@@ -17,7 +17,7 @@ Feature: As a System Admin
     When User is able to log into application
       | email                         | password   |
       | systemadmin@marketcube.io     | 123456789  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user select the vendor and seller by way of entering the vendor id and seller id for create association
       | vendor                         | seller                     |
       | 5e4111fbdbf899001a5580ae       | 5e29912fbfec74a0272e9a92   |
@@ -29,7 +29,7 @@ Feature: As a System Admin
      When User is able to log into application
        | email                         | password   |
        | systemadmin@marketcube.io     | 123456789  |
-     Then user should be able to login to the system and store token
+     Then User should be able to login to the system and store token
      And user select the vendor and seller by way of entering the vendor id and seller id for remove association
        | _id                            | seller                     |
        | 5e4111fbdbf899001a5580ae       | 5e29912fbfec74a0272e9a92   |
@@ -40,7 +40,7 @@ Feature: As a System Admin
     When User is able to log into application
       | email                             | password     |
       | <email>                           | <password>   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user select the vendor and seller by way of entering the vendor id and seller id for remove association
       | _id                            | seller                     |
       | 5e4111fbdbf899001a5580ae       | 5e29912fbfec74a0272e9a92   |
@@ -55,7 +55,7 @@ Feature: As a System Admin
     When User is able to log into application
       | email                             | password     |
       | <email>                           | <password>   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user select the vendor and seller by way of entering the vendor id and seller id for create association
       | vendor                         | seller                     |
       | 5e4111fbdbf899001a5580ae       | 5e29912fbfec74a0272e9a92   |
@@ -71,7 +71,7 @@ Feature: As a System Admin
     When User is able to log into application
       | email                         | password   |
       | systemadmin@marketcube.io     | 123456789  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user select the vendor and seller by way of entering the vendor id and seller id for create association
       | vendor                         | seller                     |
       | <vendor>                       | <seller>                   |
@@ -88,7 +88,7 @@ Feature: As a System Admin
     When User is able to log into application
       | email                         | password   |
       | systemadmin@marketcube.io     | 123456789  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user select the vendor and seller by way of entering the vendor id and seller id for remove association
       | _id                            | seller                     |
       | <_id>                          | <seller>                   |

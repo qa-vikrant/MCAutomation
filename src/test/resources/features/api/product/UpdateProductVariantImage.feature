@@ -7,7 +7,7 @@ Feature: API-  Product - Update product variant image. -put-  /product/variant/i
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the details of productId , id and image url
       | productId                          | id        | image   |
       | <productId>                        | <id>      | <image> |
@@ -28,7 +28,7 @@ Feature: API-  Product - Update product variant image. -put-  /product/variant/i
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the details of productId , id and image url
       | productId                          | id        | image   |
       | <productId>                        | <id>      | <image> |
@@ -43,43 +43,43 @@ Feature: API-  Product - Update product variant image. -put-  /product/variant/i
 
 
 
-  Scenario Outline: Login with valid registered user details as a System Admin and user wants to update product variant image of vendor
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When user enters the details of productId , id and image url
-      | productId                          | id        | image   |
-      | <productId>                        | <id>      | <image> |
-    And user make a request to update product variant image
-    Then user should be able to update product variant image
-      | 5e65e7fc009ff500172925a8 |
-    Examples:
-      | productId                        | id      |  image                       |
-      | 5e65e7fc009ff500172925a8         | 1       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
-      | 5e65e7fc009ff500172925a8         | 2       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
-      | 5e65e7fc009ff500172925a8         | 3       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
-      | 5e65e7fc009ff500172925a8         | 4       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
+#  Scenario Outline: Login with valid registered user details as a System Admin and user wants to update product variant image of vendor
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When user enters the details of productId , id and image url
+#      | productId                          | id        | image   |
+#      | <productId>                        | <id>      | <image> |
+#    And user make a request to update product variant image
+#    Then user should be able to update product variant image
+#      | 5e65e7fc009ff500172925a8 |
+#    Examples:
+#      | productId                        | id      |  image                       |
+#      | 5e65e7fc009ff500172925a8         | 1       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
+#      | 5e65e7fc009ff500172925a8         | 2       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
+#      | 5e65e7fc009ff500172925a8         | 3       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
+#      | 5e65e7fc009ff500172925a8         | 4       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
 
 
 
-  Scenario Outline: Login with valid registered user details as a System Admin and user wants to update product variant image of seller
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When user enters the details of productId , id and image url
-      | productId                         | seller     | id        | image   |
-      | <productId>                       | <seller>   | <id>      | <image> |
-    And user make a request to update product variant image
-    Then user should be able to update product variant image
-      | 5e65e7fc49300c0e10f1dc4a |
-    Examples:
-      | productId                       | seller                    | id      |  image                       |
-      | 5e65e7fc009ff500172925a8        | 5e29912fbfec74a0272e9a92  | 1       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
-      | 5e65e7fc009ff500172925a8        | 5e29912fbfec74a0272e9a92  | 2       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
-      | 5e65e7fc009ff500172925a8        | 5e29912fbfec74a0272e9a92  | 3       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
-      | 5e65e7fc009ff500172925a8        | 5e29912fbfec74a0272e9a92  | 4       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
+#  Scenario Outline: Login with valid registered user details as a System Admin and user wants to update product variant image of seller
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When user enters the details of productId , id and image url
+#      | productId                         | seller     | id        | image   |
+#      | <productId>                       | <seller>   | <id>      | <image> |
+#    And user make a request to update product variant image
+#    Then user should be able to update product variant image
+#      | 5e65e7fc49300c0e10f1dc4a |
+#    Examples:
+#      | productId                       | seller                    | id      |  image                       |
+#      | 5e65e7fc009ff500172925a8        | 5e29912fbfec74a0272e9a92  | 1       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
+#      | 5e65e7fc009ff500172925a8        | 5e29912fbfec74a0272e9a92  | 2       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
+#      | 5e65e7fc009ff500172925a8        | 5e29912fbfec74a0272e9a92  | 3       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
+#      | 5e65e7fc009ff500172925a8        | 5e29912fbfec74a0272e9a92  | 4       |  https://res.cloudinary.com/marketcube/image/upload/v1583736827/mc/test/product/5e65e7fc009ff500172925a8/lfeodasrsm1bxiu8uk42.jpg    |
 
 
 
@@ -88,7 +88,7 @@ Feature: API-  Product - Update product variant image. -put-  /product/variant/i
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the details of productId , id and image url
       | productId                          | id        | image   |
       | <productId>                        | <id>      | <image> |

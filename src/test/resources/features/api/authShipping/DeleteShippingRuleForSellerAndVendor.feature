@@ -10,7 +10,7 @@ Feature:  Auth - Delete shipping rule for seller -  delete - /user/shipping-rule
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shippingRuleId
       |   shippingRuleId              |
       |  <shippingRuleId>             |
@@ -35,7 +35,7 @@ Feature:  Auth - Delete shipping rule for seller -  delete - /user/shipping-rule
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shippingRuleId
       | shippingRuleId             |
       | 5e69ef6c558f0c001af94fdc   |
@@ -44,24 +44,24 @@ Feature:  Auth - Delete shipping rule for seller -  delete - /user/shipping-rule
 
 
 
-  Scenario: Login with valid registered user details as a system admin and user wants to delete shipping rule of seller
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When User enters shippingRuleId
-      | shippingRuleId             |
-      | 5e69ef6c558f0c001af94fdc   |
-    And user make a request to delete shipping rule
-    Then User should not be able to delete shipping rule and user should get validation error message
-      |  User is not authorized to perform this action |
+#  Scenario: Login with valid registered user details as a system admin and user wants to delete shipping rule of seller
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When User enters shippingRuleId
+#      | shippingRuleId             |
+#      | 5e69ef6c558f0c001af94fdc   |
+#    And user make a request to delete shipping rule
+#    Then User should not be able to delete shipping rule and user should get validation error message
+#      |  User is not authorized to perform this action |
 
 
   Scenario Outline: Login with valid registered user details as a seller and without follow field validation user wants to delete shipping Rule for seller
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shippingRuleId
       | shippingRuleId          |
       |  <shippingRuleId>       |

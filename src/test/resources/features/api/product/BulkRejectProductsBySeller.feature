@@ -11,7 +11,7 @@ Feature: API -  Product - Bulk Reject Products.-  put -  /product/bulk-reject
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh+60@successive.tech      | 123456789      |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Reject products
       | 5ebcf6bf972523001b770ab3    |
       | 5ebd7be3e1f3e80018cf5516    |
@@ -31,7 +31,7 @@ Feature: API -  Product - Bulk Reject Products.-  put -  /product/bulk-reject
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh+62@successive.tech      | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Reject products
       | 5ebcf6bf972523001b770ab3    |
       | 5ebd7be3e1f3e80018cf5516    |
@@ -73,7 +73,7 @@ Feature: API -  Product - Bulk Reject Products.-  put -  /product/bulk-reject
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Reject products
       |     |
     And user enter actions details to Reject products
@@ -91,7 +91,7 @@ Feature: API -  Product - Bulk Reject Products.-  put -  /product/bulk-reject
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Reject products
       |  121212121221   |
     And user enter actions details to Reject products
@@ -109,7 +109,7 @@ Feature: API -  Product - Bulk Reject Products.-  put -  /product/bulk-reject
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Reject products
       | 5e9421c24c4af60018b45bd5    |
       | 5e9421c24c4af60018b45bd5    |
@@ -159,7 +159,7 @@ Feature: API -  Product - Bulk Reject Products.-  put -  /product/bulk-reject
     When User is able to log into application
       | email                              | password       |
       | vikrant.singh@successive.tech      | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Reject products
       | 5ebcf6bf972523001b770ab3    |
       | 5ebd7be3e1f3e80018cf5516    |
@@ -180,7 +180,7 @@ Feature: API -  Product - Bulk Reject Products.-  put -  /product/bulk-reject
     When User is able to log into application
       | email                              | password       |
       | vikrant.singh@successive.tech      | HaiVikki4321   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Reject products
       | 5ebcf6bf972523001b770ab3    |
       | 5ebd7be3e1f3e80018cf5516    |

@@ -3,16 +3,16 @@ Feature: Product - Fetch product data - get -  /product/:id
         Login as a registered user(System admin/seller/vendor)
         I want to fetch details of product
 
-  Scenario: Login with valid registered user details as a System Admin and user make a request for fetch data details of product
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When user enters the Object id of product and Object id of user who is sending the request
-      | id                          | userId                     |
-      | 5e53831cc317d30017cb894f    | 59c134d3c8efb4001a2bf1ad   |
-    And user make a request to fetch details of desired product
-    Then user should be able to fetch details of desired product
+#  Scenario: Login with valid registered user details as a System Admin and user make a request for fetch data details of product
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When user enters the Object id of product and Object id of user who is sending the request
+#      | id                          | userId                     |
+#      | 5e53831cc317d30017cb894f    | 59c134d3c8efb4001a2bf1ad   |
+#    And user make a request to fetch details of desired product
+#    Then user should be able to fetch details of desired product
 
 #for seller we  use sellerProducts object id as a id instead of objectid of products  that we find from sellerProducts table
 # and use products table and sellerProducts table
@@ -22,7 +22,7 @@ Feature: Product - Fetch product data - get -  /product/:id
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object id of product and Object id of user who is sending the request
       | id                          | userId                     |
       | 5e53831c59b31378d494ec14    | 5e29912fbfec74a0272e9a92   |
@@ -34,7 +34,7 @@ Feature: Product - Fetch product data - get -  /product/:id
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object id of product and Object id of user who is sending the request
       | id                          | userId                     |
       | 5e53831cc317d30017cb894f    | 5e2996260da2580011251edb   |
@@ -48,7 +48,7 @@ Feature: Product - Fetch product data - get -  /product/:id
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object id of product and Object id of user who is sending the request
       | id                          | userId                     |
       | 5e53831cc317d30017cb894f    | 59c134d3c8efb4001a2bf1ad   |
@@ -63,7 +63,7 @@ Feature: Product - Fetch product data - get -  /product/:id
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object id of product and Object id of user who is sending the request
       | id                            | userId                       |
       | <id>                          | <userId>                     |
@@ -90,7 +90,7 @@ Feature: Product - Fetch product data - get -  /product/:id
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object id of product and Object id of user who is sending the request
       | id                            | userId                       |
       | <id>                          | <userId>                     |

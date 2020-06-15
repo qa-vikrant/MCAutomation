@@ -6,78 +6,6 @@ Feature:
          As a seller-
          user wants to fetch their associated list of vendor
 
-  Scenario:Login with valid registered user details as a system admin and user gets the list of seller
-    When User is able to log into application
-      | email                         | password   |
-      | systemadmin@marketcube.io     | 123456789  |
-    Then User should be able to login to the system and store token
-    And user enter the requesterID and userType
-      |  userId                     |    userType     |
-      |  59c134d3c8efb4001a2bf1ad   |    seller       |
-    And user make a request to fetch list of seller
-    Then user should be able to gets all list of seller that he requested
-
-
-  Scenario Outline:Login with valid registered user details as a system admin and user request for list of seller without follow Userid field and Usertype field validation
-    When User is able to log into application
-      | email                         | password   |
-      | systemadmin@marketcube.io     | 123456789  |
-    Then User should be able to login to the system and store token
-    And user enter the requesterID and userType
-      |  userId                     |    userType       |
-      |  <userId>                   |    <userType>     |
-    And user make a request to fetch list of seller
-    Then user should not be able to gets any list of seller that he requested and user should get validation messages
-      | UserType is required.                      |
-      | UserId is required.                        |
-      | Invalid type provided                      |
-      | Invalid userId provided.                   |
-      | UserId is required.                        |
-    Examples:
-      |  userId                       |    userType        |
-      |  59c134d3c8efb4001a2bf1ad     |                    |
-      |                               |    seller          |
-      |  59c134d3c8efb4001a2bf1ad     |    sellersdhsjjsj  |
-      |  59c134d3c8efb4001a2bf1adww   |    seller          |
-      |                               |                    |
-# bug --login with system admin and user request for list of seller ,when we enter invalid user id then it should be expected message as a --"Invalid userId provided." ,But it is giving wrong messages as a "Cast to ObjectId failed for value \"59c134d3c8efb4001a2bf1adww\" at path \"_id\" for model \"Users\"
-
-
-  Scenario:Login with valid registered user details as a system admin and user gets the list of vendor
-    When User is able to log into application
-      | email                         | password   |
-      | systemadmin@marketcube.io     | 123456789  |
-    Then User should be able to login to the system and store token
-    And user enter the requesterID and userType
-      |  userId                     |    userType     |
-      |  59c134d3c8efb4001a2bf1ad   |    supplier     |
-    And user make a request to fetch list of vendor
-    Then user should be able to gets all list of vendor that he requested
-
-
-  Scenario Outline:Login with valid registered user details as a system admin and user request for list of vendor without follow Userid field and Usertype field validation
-    When User is able to log into application
-      | email                         | password   |
-      | systemadmin@marketcube.io     | 123456789  |
-    Then User should be able to login to the system and store token
-    And user enter the requesterID and userType
-      |  userId                       |    userType       |
-      |  <userId>                     |    <userType>     |
-    And user make a request to fetch list of vendor
-    Then user should not be able to gets any list of vendor that he requested and user should get validation messages
-      | UserType is required.                      |
-      | UserId is required.                        |
-      | Invalid type provided                      |
-      | Invalid userId provided.                   |
-      | UserId is required.                        |
-    Examples:
-      |  userId                       |    userType          |
-      |  59c134d3c8efb4001a2bf1ad     |                      |
-      |                               |    supplier          |
-      |  59c134d3c8efb4001a2bf1ad     |    suppliersdhsjjsj  |
-      |  59c134d3c8efb4001a2bf1adww   |    supplier          |
-      |                               |                      |
-# bug --login with system admin and user request for list of vendor ,when we enter invalid user id then it should be expected message as a --"Invalid userId provided." ,But it is giving wrong messages as a "Cast to ObjectId failed for value \"59c134d3c8efb4001a2bf1adww\" at path \"_id\" for model \"Users\"
 
 
   Scenario:Login with valid registered user details as a seller and user gets the list of their associated vendor
@@ -223,7 +151,7 @@ Feature:
     When User is able to log into application
       | email                                | password    |
       | vikrant.singh@successive.tech        | HaiVikki12  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                     |    userType     |
       |  <userId>                   |    <userType>   |
@@ -241,7 +169,7 @@ Feature:
     When User is able to log into application
       | email                                   | password    |
       | vikrant.singh+60@successive.tech        | 123456789   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                     |    userType     |
       |  5e467ab03dcebee6ad14a23f   |    supplier     |
@@ -254,7 +182,7 @@ Feature:
     When User is able to log into application
       | email                                | password       |
       | vikrant.singh+13@successive.tech     | 1234512345   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                       |    userType       |
       |  <userId>                     |    <userType>     |
@@ -266,3 +194,78 @@ Feature:
       |  userId                     |    userType     |
       |  5e3baa47df34800019a752d4   |    supplier     |
       |  5b9f7962171487000f0968d2   |    supplier     |
+
+
+#  Scenario:Login with valid registered user details as a system admin and user gets the list of seller
+#    When User is able to log into application
+#      | email                         | password   |
+#      | systemadmin@marketcube.io     | 123456789  |
+#    Then User should be able to login to the system and store token
+#    And user enter the requesterID and userType
+#      |  userId                     |    userType     |
+#      |  59c134d3c8efb4001a2bf1ad   |    seller       |
+#    And user make a request to fetch list of seller
+#    Then user should be able to gets all list of seller that he requested
+#
+#
+#  Scenario Outline:Login with valid registered user details as a system admin and user request for list of seller without follow Userid field and Usertype field validation
+#    When User is able to log into application
+#      | email                         | password   |
+#      | systemadmin@marketcube.io     | 123456789  |
+#    Then User should be able to login to the system and store token
+#    And user enter the requesterID and userType
+#      |  userId                     |    userType       |
+#      |  <userId>                   |    <userType>     |
+#    And user make a request to fetch list of seller
+#    Then user should not be able to gets any list of seller that he requested and user should get validation messages
+#      | UserType is required.                      |
+#      | UserId is required.                        |
+#      | Invalid type provided                      |
+#      | Invalid userId provided.                   |
+#      | UserId is required.                        |
+#    Examples:
+#      |  userId                       |    userType        |
+#      |  59c134d3c8efb4001a2bf1ad     |                    |
+#      |                               |    seller          |
+#      |  59c134d3c8efb4001a2bf1ad     |    sellersdhsjjsj  |
+#      |  59c134d3c8efb4001a2bf1adww   |    seller          |
+#      |                               |                    |
+## bug --login with system admin and user request for list of seller ,when we enter invalid user id then it should be expected message as a --"Invalid userId provided." ,But it is giving wrong messages as a "Cast to ObjectId failed for value \"59c134d3c8efb4001a2bf1adww\" at path \"_id\" for model \"Users\"
+#
+#
+#  Scenario:Login with valid registered user details as a system admin and user gets the list of vendor
+#    When User is able to log into application
+#      | email                         | password   |
+#      | systemadmin@marketcube.io     | 123456789  |
+#    Then User should be able to login to the system and store token
+#    And user enter the requesterID and userType
+#      |  userId                     |    userType     |
+#      |  59c134d3c8efb4001a2bf1ad   |    supplier     |
+#    And user make a request to fetch list of vendor
+#    Then user should be able to gets all list of vendor that he requested
+#
+#
+#  Scenario Outline:Login with valid registered user details as a system admin and user request for list of vendor without follow Userid field and Usertype field validation
+#    When User is able to log into application
+#      | email                         | password   |
+#      | systemadmin@marketcube.io     | 123456789  |
+#    Then User should be able to login to the system and store token
+#    And user enter the requesterID and userType
+#      |  userId                       |    userType       |
+#      |  <userId>                     |    <userType>     |
+#    And user make a request to fetch list of vendor
+#    Then user should not be able to gets any list of vendor that he requested and user should get validation messages
+#      | UserType is required.                      |
+#      | UserId is required.                        |
+#      | Invalid type provided                      |
+#      | Invalid userId provided.                   |
+#      | UserId is required.                        |
+#    Examples:
+#      |  userId                       |    userType          |
+#      |  59c134d3c8efb4001a2bf1ad     |                      |
+#      |                               |    supplier          |
+#      |  59c134d3c8efb4001a2bf1ad     |    suppliersdhsjjsj  |
+#      |  59c134d3c8efb4001a2bf1adww   |    supplier          |
+#      |                               |                      |
+## bug --login with system admin and user request for list of vendor ,when we enter invalid user id then it should be expected message as a --"Invalid userId provided." ,But it is giving wrong messages as a "Cast to ObjectId failed for value \"59c134d3c8efb4001a2bf1adww\" at path \"_id\" for model \"Users\"
+

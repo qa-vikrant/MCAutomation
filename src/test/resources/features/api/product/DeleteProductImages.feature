@@ -7,7 +7,7 @@ Feature: Product - Delete Product Image.-  delete -  /product/image
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the details of productId , url of image and sellerid from seller products
       | productId                          | url        | seller   |
       | <productId>                        | <url>      | <seller> |
@@ -25,7 +25,7 @@ Feature: Product - Delete Product Image.-  delete -  /product/image
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the details of productId , url of image and vendorid from vendor products
       | productId                          | url        | vendor   |
       | <productId>                        | <url>      | <vendor> |
@@ -37,38 +37,38 @@ Feature: Product - Delete Product Image.-  delete -  /product/image
 #take product id  as object id from products table and url from products  table only for vendors
 
 
-
-  Scenario Outline: Login with valid registered user details as a system admin and user wants to delete the image of vendor product
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When user enters the details of productId , url of image and vendorid from vendor products
-      | productId                          | url        | vendor   |
-      | <productId>                        | <url>      | <vendor> |
-    And User make a request to delete the image of product
-    Then user should be able to delete the image of product
-    Examples:
-      | productId                        | url      | vendor |
-      | 5e537878edb8830017e45195         | https://res.cloudinary.com/marketcube/image/upload/v1583223092/mc/test/product/5e537878edb8830017e45195/bubzsobm62auatpbamql.jpg     |  5e2996260da2580011251edb    |
+#
+#  Scenario Outline: Login with valid registered user details as a system admin and user wants to delete the image of vendor product
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When user enters the details of productId , url of image and vendorid from vendor products
+#      | productId                          | url        | vendor   |
+#      | <productId>                        | <url>      | <vendor> |
+#    And User make a request to delete the image of product
+#    Then user should be able to delete the image of product
+#    Examples:
+#      | productId                        | url      | vendor |
+#      | 5e537878edb8830017e45195         | https://res.cloudinary.com/marketcube/image/upload/v1583223092/mc/test/product/5e537878edb8830017e45195/bubzsobm62auatpbamql.jpg     |  5e2996260da2580011251edb    |
 #take product id  as object id from products table and url from products  table only for vendors by system admin
 
 
-
-  Scenario Outline: Login with valid registered user details as a system admin and user wants to delete the image of seller product
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When user enters the details of productId , url of image and sellerid from seller products
-      | productId                          | url        | seller   |
-      | <productId>                        | <url>      | <seller> |
-    And User make a request to delete the image of product
-    Then user should be able to delete the image of product
-    Examples:
-      | productId                        | url      | seller |
-      | 5e537878edb8830017e45195         | https://res.cloudinary.com/marketcube/image/upload/v1583223082/mc/test/product/5e537878edb8830017e45195/hbhqnab69tugmlgb2ov9.jpg     |  5e29912fbfec74a0272e9a92    |
-#take product id  as object id from products table and url from sellerproducts table only for seller
+#
+#  Scenario Outline: Login with valid registered user details as a system admin and user wants to delete the image of seller product
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When user enters the details of productId , url of image and sellerid from seller products
+#      | productId                          | url        | seller   |
+#      | <productId>                        | <url>      | <seller> |
+#    And User make a request to delete the image of product
+#    Then user should be able to delete the image of product
+#    Examples:
+#      | productId                        | url      | seller |
+#      | 5e537878edb8830017e45195         | https://res.cloudinary.com/marketcube/image/upload/v1583223082/mc/test/product/5e537878edb8830017e45195/hbhqnab69tugmlgb2ov9.jpg     |  5e29912fbfec74a0272e9a92    |
+##take product id  as object id from products table and url from sellerproducts table only for seller
 
 
 
@@ -76,7 +76,7 @@ Feature: Product - Delete Product Image.-  delete -  /product/image
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the details of productId , url of image and sellerid from seller products
       | productId                          | url        | seller   |
       | <productId>                        | <url>      | <seller> |

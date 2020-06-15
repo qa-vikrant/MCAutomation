@@ -12,7 +12,7 @@ Feature: API -  Product - Bulk Delete Products.-  delete---  /product/bulk
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh+60@successive.tech      | 123456789      |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Delete products
       | 5eb90bc6d8e20e00170a95e1    |
       | 5eb90abdd8e20e00170a95de    |
@@ -32,7 +32,7 @@ Feature: API -  Product - Bulk Delete Products.-  delete---  /product/bulk
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh+61@successive.tech      | 1234567890      |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Delete products
       | 5e9ee13b2efe400018047ab5    |
       | 5e9ee0c76d2dd5001778fae9    |
@@ -70,7 +70,7 @@ Feature: API -  Product - Bulk Delete Products.-  delete---  /product/bulk
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Delete products
       |     |
     And user enter actions details to Delete products
@@ -92,7 +92,7 @@ Feature: API -  Product - Bulk Delete Products.-  delete---  /product/bulk
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Delete products
       |  123456789012345678901234   |
     And user enter actions details to Delete products
@@ -110,7 +110,7 @@ Feature: API -  Product - Bulk Delete Products.-  delete---  /product/bulk
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Delete products
       |  1234567890123456789012   |
     And user enter actions details to Delete products
@@ -131,7 +131,7 @@ Feature: API -  Product - Bulk Delete Products.-  delete---  /product/bulk
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Delete products
       | 5e9421c24c4af60018b45bd5    |
       | 5e9421c24c4af60018b45bd5    |
@@ -182,7 +182,7 @@ Feature: API -  Product - Bulk Delete Products.-  delete---  /product/bulk
     When User is able to log into application
       | email                              | password       |
       | vikrant.singh@successive.tech      | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Delete products
       | 5eb90c143ba7dd0018621542    |
     And user enter actions details to Delete products
@@ -201,7 +201,7 @@ Feature: API -  Product - Bulk Delete Products.-  delete---  /product/bulk
     When User is able to log into application
       | email                              | password       |
       | vikrant.singh@successive.tech      | HaiVikki4321   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Delete products
       | 5eb90c143ba7dd0018621542    |
     And user enter actions details to Delete products

@@ -4,7 +4,7 @@ Feature: User wants to remove token that is form of logout functionality
     When User is able to log into application
       | email                         | password  |
       | mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user remove valid token by clicking Logout button
       | status          | data        |
       | <status>        | <data>      |

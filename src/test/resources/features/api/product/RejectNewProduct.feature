@@ -11,7 +11,7 @@ Feature: API -  Product - Reject New Product. put - /product/reject
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the product details that he wants to reject
       | id      | seller   |
       | <id>    | <seller> |
@@ -27,7 +27,7 @@ Feature: API -  Product - Reject New Product. put - /product/reject
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the product details that he wants to reject
       | id      | seller   |
       | <id>    | <seller> |

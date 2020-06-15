@@ -3,11 +3,15 @@ Feature: API - Manage discount functionality for user
   As a registered user
   I want to manage discount for user
 
+  #  Api not work ----discussion with Naman sir
+
+
+
   Scenario: Login with valid registered user details and update product discount
     When User is able to log into application
-    |email                     | password  |
-    |mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    | email                         | password  |
+    | mohit.agrawal@successive.tech | Mohit@1989 |
+    Then User should be able to login to the system and store token
     When user enter details for discount
     |price|type|userId|ruleBy|
     |123|flat|123|sdf|

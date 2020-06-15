@@ -7,7 +7,7 @@ Feature: Auth - Update shipping rule for seller and vendor -  put - /user/shippi
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details for updation
       |   UVITTVB             |
     And User enters product details for updation
@@ -24,7 +24,7 @@ Feature: Auth - Update shipping rule for seller and vendor -  put - /user/shippi
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details for updation
       |   UVITTVB                   |
     And User enters product details for updation
@@ -40,7 +40,7 @@ Feature: Auth - Update shipping rule for seller and vendor -  put - /user/shippi
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details for updation
       |   UVITTVB                   |
     And User enters product details for updation
@@ -78,7 +78,7 @@ Feature: Auth - Update shipping rule for seller and vendor -  put - /user/shippi
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details for updation
       |   UVITTVB             |
     And User enters product details for updation
@@ -95,7 +95,7 @@ Feature: Auth - Update shipping rule for seller and vendor -  put - /user/shippi
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details for updation
       |   UVITTVB                   |
     And User enters product details for updation
@@ -111,7 +111,7 @@ Feature: Auth - Update shipping rule for seller and vendor -  put - /user/shippi
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details for updation
       |   AO             |
     And User enters product details for updation
@@ -128,7 +128,7 @@ Feature: Auth - Update shipping rule for seller and vendor -  put - /user/shippi
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details for updation
       |   UVITTVB                   |
     And User enters product details for updation
@@ -139,41 +139,41 @@ Feature: Auth - Update shipping rule for seller and vendor -  put - /user/shippi
     And User make a request to update new shipping rules based on the products
     Then User should be able to update shipping rule
 #Bug
-
-  Scenario: Login with valid registered user details as a system admin and user wants to update shipping rule for seller based on the destination
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    And User enters destination details for updation
-      |   UVITTVB             |
-    And User enters product details for updation
-      |  12DFF344DFFFF   |
-    And User enters the shippingBandID details,Price details,shipping rule condition and description of shipping rule for updation
-      | _id                               | shippingBandId              | price  | description                              | condition      | priceType   | isShippingDisabled |
-      | 5e68e51622f13c0019225c0f          | 5e688f88e2891c001afed6f9    | 0      | Hit by seller for update shipping rule   | destination    | free        | false              |
-    And User make a request to update shipping rules based on the destination
-    Then User should not be able to update shipping rule and user should get validation message
-      | User is not authorized to perform this action               |
-
-
-
-  Scenario: Login with valid registered user details as a system admin and user wants to update shipping rule for seller based on the products
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    And User enters destination details for updation
-      |   UVITTVB                   |
-    And User enters product details for updation
-      |  HR3e9xUMu112DFF344DFFFF1   |
-    And User enters the shippingBandID details,Price details,shipping rule condition and description of shipping rule for updation
-      | _id                               | shippingBandId              | price   | description                              | condition      | priceType    | isShippingDisabled |
-      | 5e69eed023128800199bb6af          | 5e688f88e2891c001afed6f9    | 55      | Hit by seller for update shipping rule   | product        | fixed        | true               |
-    And User make a request to update new shipping rules based on the products
-    Then User should not be able to update shipping rule and user should get validation message
-      | User is not authorized to perform this action               |
-
+#
+#  Scenario: Login with valid registered user details as a system admin and user wants to update shipping rule for seller based on the destination
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    And User enters destination details for updation
+#      |   UVITTVB             |
+#    And User enters product details for updation
+#      |  12DFF344DFFFF   |
+#    And User enters the shippingBandID details,Price details,shipping rule condition and description of shipping rule for updation
+#      | _id                               | shippingBandId              | price  | description                              | condition      | priceType   | isShippingDisabled |
+#      | 5e68e51622f13c0019225c0f          | 5e688f88e2891c001afed6f9    | 0      | Hit by seller for update shipping rule   | destination    | free        | false              |
+#    And User make a request to update shipping rules based on the destination
+#    Then User should not be able to update shipping rule and user should get validation message
+#      | User is not authorized to perform this action               |
+#
+#
+#
+#  Scenario: Login with valid registered user details as a system admin and user wants to update shipping rule for seller based on the products
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    And User enters destination details for updation
+#      |   UVITTVB                   |
+#    And User enters product details for updation
+#      |  HR3e9xUMu112DFF344DFFFF1   |
+#    And User enters the shippingBandID details,Price details,shipping rule condition and description of shipping rule for updation
+#      | _id                               | shippingBandId              | price   | description                              | condition      | priceType    | isShippingDisabled |
+#      | 5e69eed023128800199bb6af          | 5e688f88e2891c001afed6f9    | 55      | Hit by seller for update shipping rule   | product        | fixed        | true               |
+#    And User make a request to update new shipping rules based on the products
+#    Then User should not be able to update shipping rule and user should get validation message
+#      | User is not authorized to perform this action               |
+#
 
 
 
@@ -181,7 +181,7 @@ Feature: Auth - Update shipping rule for seller and vendor -  put - /user/shippi
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details for updation
       |                |
     And User enters product details for updation
@@ -199,7 +199,7 @@ Feature: Auth - Update shipping rule for seller and vendor -  put - /user/shippi
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details for updation
       |   UVITTVB                   |
     And User enters product details for updation

@@ -7,7 +7,7 @@ Feature: API -Auth - Delete shipping offer for seller/vendor--  delete--  /user/
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shippingOfferId
       | shippingOfferId    |
       | <shippingOfferId>  |
@@ -38,7 +38,7 @@ Feature: API -Auth - Delete shipping offer for seller/vendor--  delete--  /user/
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shippingOfferId
       | shippingOfferId    |
       | <shippingOfferId>  |
@@ -51,22 +51,22 @@ Feature: API -Auth - Delete shipping offer for seller/vendor--  delete--  /user/
 
 
 
-  Scenario Outline: Login with valid registered user details as a System Admin and user wants to delete shipping offer of seller
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When User enters shippingOfferId
-      | shippingOfferId    |
-      | <shippingOfferId>  |
-    Then user make a request to delete shipping offer
-    Then User should not be able to delete shipping offer and user should get validation error message
-      |  User is not authorized to perform this action |
-      |  User is not authorized to perform this action |
-    Examples:
-      | shippingOfferId             |
-      | 5e849084768bd6001301782a    |
-      | 5e849093768bd60013017834    |
+#  Scenario Outline: Login with valid registered user details as a System Admin and user wants to delete shipping offer of seller
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When User enters shippingOfferId
+#      | shippingOfferId    |
+#      | <shippingOfferId>  |
+#    Then user make a request to delete shipping offer
+#    Then User should not be able to delete shipping offer and user should get validation error message
+#      |  User is not authorized to perform this action |
+#      |  User is not authorized to perform this action |
+#    Examples:
+#      | shippingOfferId             |
+#      | 5e849084768bd6001301782a    |
+#      | 5e849093768bd60013017834    |
 
 
 
@@ -75,7 +75,7 @@ Feature: API -Auth - Delete shipping offer for seller/vendor--  delete--  /user/
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shippingOfferId
       | shippingOfferId    |
       | <shippingOfferId>  |

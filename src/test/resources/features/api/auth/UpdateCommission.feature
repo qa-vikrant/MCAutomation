@@ -3,11 +3,15 @@ Feature: API - Login as a registered user
     As a registered user
     I want to change the commission for any user
 
+
+
+  #  Api not work ----discussion with Naman sir
+
   Scenario: Login with valid registered user details and change flat commission
     When User is able to log into application
     |email                     | password  |
     |mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User make a request to change the commission of given user
     | commissionType     | commission  |
     |      flat          |      9      |
@@ -17,7 +21,7 @@ Feature: API - Login as a registered user
     When User is able to log into application
       |email                         | password   |
       |mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User make a request to change the commission of given user
       | commissionType      | commission  |
       | percentage          |      2      |
@@ -27,7 +31,7 @@ Feature: API - Login as a registered user
     When User is able to log into application
       |email                     | password  |
       |mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User make a request to change the commission of given user
       | commissionType | commission |
       |      percentage          |      2      |
@@ -37,7 +41,7 @@ Feature: API - Login as a registered user
     When User is able to log into application
       |email                     | password  |
       |mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User make a request to change the commission of given user
       | commissionType | commission |
       |      flat          |         |
@@ -47,7 +51,7 @@ Feature: API - Login as a registered user
     When User is able to log into application
       |email                     | password  |
       |mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User make a request to change the commission of given user
       | commissionType | commission |
       |                |    2     |

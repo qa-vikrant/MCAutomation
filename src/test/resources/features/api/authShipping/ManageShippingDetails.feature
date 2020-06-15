@@ -7,7 +7,7 @@ Feature: API -Auth - Manage shipping details -PUT-/user/shipping
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters manage shipping details
       | term   | type   | amount   | allowVendor   | isFreeForCustomer   |
       | <term> | <type> | <amount> | <allowVendor> | <isFreeForCustomer> |
@@ -30,7 +30,7 @@ Feature: API -Auth - Manage shipping details -PUT-/user/shipping
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters manage shipping details
       | term   | type   | amount   | allowVendor   | isFreeForCustomer   |
       | <term> | <type> | <amount> | <allowVendor> | <isFreeForCustomer> |
@@ -55,32 +55,32 @@ Feature: API -Auth - Manage shipping details -PUT-/user/shipping
 
 
 
-  Scenario Outline: Login with valid registered user details as a System Admin and user wants to manage shipping details
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    And user enters manage shipping details
-      | term   | type   | amount   | allowVendor   | isFreeForCustomer   |
-      | <term> | <type> | <amount> | <allowVendor> | <isFreeForCustomer> |
-    And user enters vendorIds
-      | 5e2996260da2580011251edb |
-    When User make a request to manage shipping details
-    Then User should not be able to manage shipping details and user should get validation error message
-      | User is not authorized to perform this action |
-      | User is not authorized to perform this action |
-      | User is not authorized to perform this action |
-      | User is not authorized to perform this action |
-      | User is not authorized to perform this action |
-      | User is not authorized to perform this action |
-    Examples:
-      | term            | type | amount | allowVendor      | isFreeForCustomer |
-      | vendorManage    | flat | 0      | none             | true              |
-      | vendorManage    | flat | 0      | selected         | true              |
-      | vendorManage    | flat | 0      | all              | true              |
-      | equal           | flat | 0      |                  |                   |
-      | none            | flat | 0      |                  |                   |
-      | flat            | flat | 22     |                  |                   |
+#  Scenario Outline: Login with valid registered user details as a System Admin and user wants to manage shipping details
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    And user enters manage shipping details
+#      | term   | type   | amount   | allowVendor   | isFreeForCustomer   |
+#      | <term> | <type> | <amount> | <allowVendor> | <isFreeForCustomer> |
+#    And user enters vendorIds
+#      | 5e2996260da2580011251edb |
+#    When User make a request to manage shipping details
+#    Then User should not be able to manage shipping details and user should get validation error message
+#      | User is not authorized to perform this action |
+#      | User is not authorized to perform this action |
+#      | User is not authorized to perform this action |
+#      | User is not authorized to perform this action |
+#      | User is not authorized to perform this action |
+#      | User is not authorized to perform this action |
+#    Examples:
+#      | term            | type | amount | allowVendor      | isFreeForCustomer |
+#      | vendorManage    | flat | 0      | none             | true              |
+#      | vendorManage    | flat | 0      | selected         | true              |
+#      | vendorManage    | flat | 0      | all              | true              |
+#      | equal           | flat | 0      |                  |                   |
+#      | none            | flat | 0      |                  |                   |
+#      | flat            | flat | 22     |                  |                   |
 
 
 
@@ -88,7 +88,7 @@ Feature: API -Auth - Manage shipping details -PUT-/user/shipping
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters manage shipping details
       | term   | type   | amount   | allowVendor   | isFreeForCustomer   |
       | <term> | <type> | <amount> | <allowVendor> | <isFreeForCustomer> |

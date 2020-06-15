@@ -7,7 +7,7 @@ Feature:Order - Update order line (accept/reject).- put -  /order/line-status
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a accept
       | lineItemId                 | orderId                   | isAccept  |
       | 5e61ff78e77898001255a9db   | 5e61ff77e77898001255a9d3  | true      |
@@ -19,7 +19,7 @@ Feature:Order - Update order line (accept/reject).- put -  /order/line-status
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a reject
       | lineItemId                 | orderId                   | isAccept  |
       | 5e61efe999a3030011db93c3   | 5e61efe999a3030011db93c1  | false     |
@@ -30,7 +30,7 @@ Feature:Order - Update order line (accept/reject).- put -  /order/line-status
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a accept
       | lineItemId                 | orderId                   | isAccept  |
       | 5e61ff78e77898001255a9d4   | 5e61ff77e77898001255a9d3  | true      |
@@ -42,45 +42,45 @@ Feature:Order - Update order line (accept/reject).- put -  /order/line-status
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a reject
       | lineItemId                 | orderId                   | isAccept  |
       | 5e61ff78e77898001255a9d9   | 5e61ff77e77898001255a9d3  | false     |
     Then user should be able update order line as a reject
 
-
-  Scenario: Login with valid registered user details as a System Admin and user wants to update order line as a accept
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a accept
-      | lineItemId                 | orderId                   | isAccept  |
-      | 5e61ff78e77898001255a9da   | 5e61ff77e77898001255a9d3  | true      |
-    Then user should be able update order line as a accept
-
-
-
-  Scenario: Login with valid registered user details as a System Admin  and user wants to update order line as a reject
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a reject
-      | lineItemId                 | orderId                   | isAccept  |
-      | 5e61ff78e77898001255a9d7   | 5e61ff77e77898001255a9d3  | false     |
-    Then user should be able update order line as a reject
+#
+#  Scenario: Login with valid registered user details as a System Admin and user wants to update order line as a accept
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a accept
+#      | lineItemId                 | orderId                   | isAccept  |
+#      | 5e61ff78e77898001255a9da   | 5e61ff77e77898001255a9d3  | true      |
+#    Then user should be able update order line as a accept
+#
 
 
-  Scenario: Login with valid registered user details as a System Admin  and user wants to update order line as a reject with blank isAccept field
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a reject
-      | lineItemId                 | orderId                   | isAccept  |
-      | 5e61ff78e77898001255a9d8   | 5e61ff77e77898001255a9d3  |           |
-    Then user should be able update order line as a reject with blank isAccept field
+#  Scenario: Login with valid registered user details as a System Admin  and user wants to update order line as a reject
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a reject
+#      | lineItemId                 | orderId                   | isAccept  |
+#      | 5e61ff78e77898001255a9d7   | 5e61ff77e77898001255a9d3  | false     |
+#    Then user should be able update order line as a reject
+#
+#
+#  Scenario: Login with valid registered user details as a System Admin  and user wants to update order line as a reject with blank isAccept field
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a reject
+#      | lineItemId                 | orderId                   | isAccept  |
+#      | 5e61ff78e77898001255a9d8   | 5e61ff77e77898001255a9d3  |           |
+#    Then user should be able update order line as a reject with blank isAccept field
 
 
 
@@ -90,7 +90,7 @@ Feature:Order - Update order line (accept/reject).- put -  /order/line-status
     When User is able to log into application
       | email                                        | password       |
       | vikrant.singh+60@successive.tech             | 123456789      |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a reject
       | lineItemId                 | orderId                   | isAccept   |
       | 5e61ff78e77898001255a9d6   | 5e61ff77e77898001255a9d3  |  false     |
@@ -102,7 +102,7 @@ Feature:Order - Update order line (accept/reject).- put -  /order/line-status
     When User is able to log into application
       | email                                        | password       |
       | vikrant.singh+60@successive.tech             | 123456789      |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a accept
       | lineItemId                 | orderId                   | isAccept  |
       | 5e61ff78e77898001255a9d5   | 5e61ff77e77898001255a9d3  | true      |
@@ -119,7 +119,7 @@ Feature:Order - Update order line (accept/reject).- put -  /order/line-status
     When User is able to log into application
       | email                                 | password         |
       | vikrant.singh@successive.tech         | HaiVikki12       |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters order lineitem id ,order id and isAccept details of new order and user request to update order line as a reject
       | lineItemId                   | orderId                     | isAccept    |
       | <lineItemId>                 | <orderId>                   | <isAccept>  |

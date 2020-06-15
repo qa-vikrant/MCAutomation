@@ -7,7 +7,7 @@ Feature: API - Login as a registered user
     When User is able to log into application
     |email                         | password   |
     |mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User make a request to change the terms settings by entering return type and return period
       | isReturn       | returnPeriod          |
       | <isReturn>     | <returnPeriod>        |
@@ -25,7 +25,7 @@ Feature: API - Login as a registered user
     When User is able to log into application
       |email                         | password       |
       |mohit.agrawal@successive.tech | Mohit@1989     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User make a request to change the terms settings by entering return type and return period
       | isReturn     | returnPeriod |
       | noReturn     | 10           |
@@ -38,7 +38,7 @@ Feature: API - Login as a registered user
     When User is able to log into application
       |email                         | password   |
       |mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User make a request to change the terms settings by entering return type and return period
       | isReturn   | returnPeriod |
       | return     | 10        |
@@ -51,7 +51,7 @@ Feature: API - Login as a registered user
     When User is able to log into application
       |email                     | password  |
       |mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User make a request to change the terms settings by entering return type and return period
       | isReturn   | returnPeriod |
       | return     |              |

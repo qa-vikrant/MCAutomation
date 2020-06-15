@@ -7,7 +7,7 @@ Feature: API- Product - Fetch list of products get  - /product
     When User is able to log into application
       | email                             | password      |
       | vikrant.singh@successive.tech     | HaiVikki432   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for product list
       |  userId                     |
       |  5e29912fbfec74a0272e9a92   |
@@ -20,7 +20,7 @@ Feature: API- Product - Fetch list of products get  - /product
     When User is able to log into application
       | email                             | password       |
       | vikrant.singh@successive.tech     | HaiVikki4321   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for product list
       |  userId                     |
       |  5e2996260da2580011251edb   |
@@ -46,7 +46,7 @@ Feature: API- Product - Fetch list of products get  - /product
     When User is able to log into application
       | email                                | password     |
       | vikrant.singh+13@successive.tech     | 1234512345   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for product list
       |  userId                     |
       |  5e3baa47df34800019a752d4   |
@@ -59,7 +59,7 @@ Feature: API- Product - Fetch list of products get  - /product
     When User is able to log into application
       | email                                | password       |
       | vikrant.singh@successive.tech        | HaiVikki4321   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for product list
       |  userId                     |
       |  <userId>                   |
@@ -80,7 +80,7 @@ Feature: API- Product - Fetch list of products get  - /product
     When User is able to log into application
       | email                                | password       |
       | vikrant.singh@successive.tech        | HaiVikki4321   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for product list
       |  userId                     |
       |  5ba08432171487000f09697a   |
@@ -95,7 +95,7 @@ Feature: API- Product - Fetch list of products get  - /product
     When User is able to log into application
       | email                                | password      |
       | vikrant.singh@successive.tech        | HaiVikki432   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for product list
       |  userId                        |
       |  5b9fa03e7ef81d000f031b42      |

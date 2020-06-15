@@ -11,7 +11,7 @@ Feature: API -  Product - Bulk Re-submit Products.-  put -  /product/bulk-resubm
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Re-submit products
       | 5e94640acedd040017b95159    |
       | 5e946409cedd040017b95156    |
@@ -33,7 +33,7 @@ Feature: API -  Product - Bulk Re-submit Products.-  put -  /product/bulk-resubm
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh+61@successive.tech      | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Re-submit products
       | 5ebc1085e81c740017cd8061    |
     And user enter actions details to Re-submit products
@@ -47,23 +47,23 @@ Feature: API -  Product - Bulk Re-submit Products.-  put -  /product/bulk-resubm
 
 
 
-  Scenario Outline:Login with valid registered user details as a System Admin and user wants to Re-submit products in bulk
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    And user enters productIds to Re-submit products
-      | 5e94640acedd040017b95159    |
-      | 5e946409cedd040017b95156    |
-      | 5e94640ccedd040017b9515c    |
-    And user enter actions details to Re-submit products
-      | key     | deleteFromShopify     | all     |  reason     |
-      | <key>   | <deleteFromShopify>   | <all>   |  <reason>   |
-    When user make request to Re-submit products in bulk
-    Then user should be able to Re-submit products in bulk
-    Examples:
-      | key       | deleteFromShopify | all     | reason         |
-      | resubmit  | false             | false   | reject it      |
+#  Scenario Outline:Login with valid registered user details as a System Admin and user wants to Re-submit products in bulk
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    And user enters productIds to Re-submit products
+#      | 5e94640acedd040017b95159    |
+#      | 5e946409cedd040017b95156    |
+#      | 5e94640ccedd040017b9515c    |
+#    And user enter actions details to Re-submit products
+#      | key     | deleteFromShopify     | all     |  reason     |
+#      | <key>   | <deleteFromShopify>   | <all>   |  <reason>   |
+#    When user make request to Re-submit products in bulk
+#    Then user should be able to Re-submit products in bulk
+#    Examples:
+#      | key       | deleteFromShopify | all     | reason         |
+#      | resubmit  | false             | false   | reject it      |
 
 
 
@@ -72,7 +72,7 @@ Feature: API -  Product - Bulk Re-submit Products.-  put -  /product/bulk-resubm
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Re-submit products
       |     |
     And user enter actions details to Re-submit products
@@ -90,7 +90,7 @@ Feature: API -  Product - Bulk Re-submit Products.-  put -  /product/bulk-resubm
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Re-submit products
       |  121212121221   |
     And user enter actions details to Re-submit products
@@ -108,7 +108,7 @@ Feature: API -  Product - Bulk Re-submit Products.-  put -  /product/bulk-resubm
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Re-submit products
       | 5e9421c24c4af60018b45bd5    |
       | 5e9421c24c4af60018b45bd5    |
@@ -157,7 +157,7 @@ Feature: API -  Product - Bulk Re-submit Products.-  put -  /product/bulk-resubm
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh+62@successive.tech      | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Re-submit products
       | 5ebc1085e81c740017cd8061    |
     And user enter actions details to Re-submit products
@@ -176,7 +176,7 @@ Feature: API -  Product - Bulk Re-submit Products.-  put -  /product/bulk-resubm
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Re-submit products
       | 5ebc1085e81c740017cd8061    |
     And user enter actions details to Re-submit products

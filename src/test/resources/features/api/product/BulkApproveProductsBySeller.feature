@@ -48,24 +48,24 @@ Feature: API -  Product - Bulk Approve Products.- put-  /product/bulk-approve
 
 
 
-  Scenario Outline:Login with valid registered user details as a System Admin and user wants to Approve products in bulk
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then User should be able to login to the system and store token
-    And user enters productIds to Approve products
-      | 5e9421c24c4af60018b45bd5    |
-      | 5e9421c24c4af60018b45bd5    |
-      | 5e9421c24c4af60018b45bd5    |
-    And user enter actions details to Approve products
-      | key     | deleteFromShopify     | all     |  reason     |
-      | <key>   | <deleteFromShopify>   | <all>   |  <reason>   |
-    When user make request to Approve products in bulk
-    Then user should not be able to Approve products in bulk and user should get validation error message
-      | User is not authorized to perform this action |
-    Examples:
-      | key     | deleteFromShopify | all     | reason         |
-      | approve  | false             | false   | reject it      |
+#  Scenario Outline:Login with valid registered user details as a System Admin and user wants to Approve products in bulk
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    And user enters productIds to Approve products
+#      | 5e9421c24c4af60018b45bd5    |
+#      | 5e9421c24c4af60018b45bd5    |
+#      | 5e9421c24c4af60018b45bd5    |
+#    And user enter actions details to Approve products
+#      | key     | deleteFromShopify     | all     |  reason     |
+#      | <key>   | <deleteFromShopify>   | <all>   |  <reason>   |
+#    When user make request to Approve products in bulk
+#    Then user should not be able to Approve products in bulk and user should get validation error message
+#      | User is not authorized to perform this action |
+#    Examples:
+#      | key     | deleteFromShopify | all     | reason         |
+#      | approve  | false             | false   | reject it      |
 
 
 

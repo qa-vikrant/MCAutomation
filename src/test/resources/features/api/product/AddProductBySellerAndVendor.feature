@@ -65,26 +65,26 @@ Feature: API - Product - Add Product.-  post -  /product
 
 
 
-  Scenario Outline: Login with valid registered user details as a System Admin and user wants to add a product on marketcube for vendor
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then User should be able to login to the system and store token
-    And user enters tag details for new product
-      |  |
-    And user enter image details for new product
-      |  |
-    And user enter variant details for new product
-      |  |
-    And user enter other details for new product
-      | title   | description   | handle   | vendor   | vendorId   | collections   | productType   | isTaxable   | price   | comparePrice    | barcode   | inventoryManagement   | sku   | isShipping   | weight   | weightUnit   | fulfillmentService   | option1   | option2   | option3   | markUp   |  discount  | inventoryQuantity   |
-      | <title> | <description> | <handle> | <vendor> | <vendorId> | <collections> | <productType> | <isTaxable> | <price> | <comparePrice>  | <barcode> | <inventoryManagement> | <sku> | <isShipping> | <weight> | <weightUnit> | <fulfillmentService> | <option1> | <option2> | <option3> | <markUp> | <discount> | <inventoryQuantity> |
-    When user make request to add product on marketcube
-    Then user should be able to add product on marketcube
-    Examples:
-      | title   | description                    | handle   | vendor   | vendorId                 | collections   | productType   | isTaxable   | price   | comparePrice | barcode   | inventoryManagement   | sku   | isShipping   | weight   | weightUnit   | fulfillmentService   | option1   | option2   | option3   | markUp   |  discount  | inventoryQuantity   |
-      | Nike    | API Automation by System Admin | handle   | Vikrant  | 5e2996260da2580011251edb |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  |           |           |           |          |            |                     |
-# without  "isWebhook"and"shopifyProductId"   field , we  adding product by system admin work as a vendor not given -------------------------
+#  Scenario Outline: Login with valid registered user details as a System Admin and user wants to add a product on marketcube for vendor
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    And user enters tag details for new product
+#      |  |
+#    And user enter image details for new product
+#      |  |
+#    And user enter variant details for new product
+#      |  |
+#    And user enter other details for new product
+#      | title   | description   | handle   | vendor   | vendorId   | collections   | productType   | isTaxable   | price   | comparePrice    | barcode   | inventoryManagement   | sku   | isShipping   | weight   | weightUnit   | fulfillmentService   | option1   | option2   | option3   | markUp   |  discount  | inventoryQuantity   |
+#      | <title> | <description> | <handle> | <vendor> | <vendorId> | <collections> | <productType> | <isTaxable> | <price> | <comparePrice>  | <barcode> | <inventoryManagement> | <sku> | <isShipping> | <weight> | <weightUnit> | <fulfillmentService> | <option1> | <option2> | <option3> | <markUp> | <discount> | <inventoryQuantity> |
+#    When user make request to add product on marketcube
+#    Then user should be able to add product on marketcube
+#    Examples:
+#      | title   | description                    | handle   | vendor   | vendorId                 | collections   | productType   | isTaxable   | price   | comparePrice | barcode   | inventoryManagement   | sku   | isShipping   | weight   | weightUnit   | fulfillmentService   | option1   | option2   | option3   | markUp   |  discount  | inventoryQuantity   |
+#      | Nike    | API Automation by System Admin | handle   | Vikrant  | 5e2996260da2580011251edb |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  |           |           |           |          |            |                     |
+## without  "isWebhook"and"shopifyProductId"   field , we  adding product by system admin work as a vendor not given -------------------------
 
 
 

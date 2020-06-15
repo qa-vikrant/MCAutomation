@@ -7,7 +7,7 @@ Feature: API - Update markup of product
     When User is able to log into application
     |email                     | password  |
     |mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters details for user setting update
     | id | isAcceptOrder |
     |   5dc93694b47bb36e90665083     |   true   |
@@ -17,7 +17,7 @@ Feature: API - Update markup of product
     When User is able to log into application
       |email                     | password  |
       |mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters details for user setting update
       | id | isAcceptOrder |
       |   <id>     |   <isAcceptOrder>   |
