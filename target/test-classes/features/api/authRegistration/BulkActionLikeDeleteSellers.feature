@@ -7,7 +7,7 @@ Feature: API --  Auth - Bulk Action like delete sellers.--  put  --  /user/bulk-
     When User is able to log into application
       | email                             | password     |
       | systemadmin@marketcube.io         | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that seller details he wants to delete in Bulk
       | 5ed3cd9ab41fbb001bff707b |
       | 5ed3cda54c24150019c4fb3c |
@@ -26,7 +26,7 @@ Feature: API --  Auth - Bulk Action like delete sellers.--  put  --  /user/bulk-
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh+60@successive.tech  | 1234@Vik     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that seller details he wants to delete in Bulk
       | 5ed3ce7e804f9b001ecbebb6 |
       | 5ed3ce8b4c24150019c4fb3e |
@@ -49,7 +49,7 @@ Feature: API --  Auth - Bulk Action like delete sellers.--  put  --  /user/bulk-
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh+64@successive.tech  | 1234567890   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that seller details he wants to delete in Bulk
       | 5ed3d8ffb41fbb001bff707f |
       | 5ed11bd3946cf200132c0feb |
@@ -72,7 +72,7 @@ Feature: API --  Auth - Bulk Action like delete sellers.--  put  --  /user/bulk-
     When User is able to log into application
       | email                             | password     |
       | systemadmin@marketcube.io         | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that seller details he wants to delete in Bulk
       |                                 |
     And user enters other details to delete sellers in Bulk
@@ -92,7 +92,7 @@ Feature: API --  Auth - Bulk Action like delete sellers.--  put  --  /user/bulk-
     When User is able to log into application
       | email                             | password     |
       | systemadmin@marketcube.io         | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that seller details he wants to delete in Bulk
       |  123456789012345678901234       |
     And user enters other details to delete sellers in Bulk
@@ -112,7 +112,7 @@ Feature: API --  Auth - Bulk Action like delete sellers.--  put  --  /user/bulk-
     When User is able to log into application
       | email                             | password     |
       | systemadmin@marketcube.io         | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that seller details he wants to delete in Bulk
       | 5ed3e923b41fbb001bff7085 |
       | 5ed3e91db41fbb001bff7083 |
@@ -138,7 +138,7 @@ Feature: API --  Auth - Bulk Action like delete sellers.--  put  --  /user/bulk-
     When User is able to log into application
       | email                             | password     |
       | systemadmin@marketcube.io         | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that seller details he wants to delete in Bulk
       | 5ecbf6e54101bb00199c3551 |
     And user enters other details to delete sellers in Bulk

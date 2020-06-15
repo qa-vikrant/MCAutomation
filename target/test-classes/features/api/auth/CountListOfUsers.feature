@@ -8,7 +8,7 @@ Feature: Login as System admin
     When User is able to log into application
       | email                         | password     |
       | systemadmin@marketcube.io     | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the userRole field and filter field of requester
       | userRole     | filter   |
       | <userRole>   | <filter> |
@@ -27,7 +27,7 @@ Feature: Login as System admin
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh@successive.tech     | HaiVikki12   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the userRole field and filter field of requester
       | userRole     | filter   |
       | <userRole>   | <filter> |
@@ -43,7 +43,7 @@ Feature: Login as System admin
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh@successive.tech     | HaiVikki12   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the userRole field and filter field of requester
       | userRole     | filter   |
       | <userRole>   | <filter> |
@@ -62,7 +62,7 @@ Feature: Login as System admin
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh@successive.tech     | 1234567890   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the userRole field and filter field of requester
       | userRole     | filter   |
       | <userRole>   | <filter> |

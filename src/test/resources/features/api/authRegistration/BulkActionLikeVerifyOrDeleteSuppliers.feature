@@ -8,7 +8,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh+60@successive.tech  | 1234@Vik     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to verify
       | 5ec6b46099674c00197fe6bb |
     And user enters other details for verify suppliers in Bulk
@@ -27,7 +27,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh+60@successive.tech  | 1234@Vik     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to delete
       | 5ec6b46099674c00197fe6bb |
     And user enters other details for delete suppliers in Bulk
@@ -47,7 +47,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh@successive.tech     | 1234@Vik     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to verify
       | 5ec6b221c76845001ab7478a |
       | 5ec76ca1238b4a00190685ae |
@@ -70,7 +70,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh@successive.tech     | 1234@Vik     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to delete
       | 5ec6b221c76845001ab7478a |
       | 5ec76ca1238b4a00190685ae |
@@ -93,7 +93,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password       |
       | vikrant.singh+64@successive.tech  | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to verify
       | 5ec6b221c76845001ab7478a |
       | 5ec76ca1238b4a00190685ae |
@@ -116,7 +116,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password       |
       | vikrant.singh+64@successive.tech  | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to delete
       | 5ec6b221c76845001ab7478a |
       | 5ec76ca1238b4a00190685ae |
@@ -143,7 +143,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | systemadmin@marketcube.io         | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to verify
       | 5ec6b46099674c00197fe6bb |
     And user enters other details for verify suppliers in Bulk
@@ -162,7 +162,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | systemadmin@marketcube.io         | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to delete
       | 5ec6b46099674c00197fe6bb |
     And user enters other details for delete suppliers in Bulk
@@ -181,7 +181,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | systemadmin@marketcube.io         | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to verify
       | 5ecbf6e54101bb00199c3551 |
     And user enters other details for verify suppliers in Bulk
@@ -201,7 +201,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | systemadmin@marketcube.io         | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to delete
       | 5ecbf6e54101bb00199c3551 |
     And user enters other details for delete suppliers in Bulk
@@ -224,7 +224,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh+60@successive.tech  | 1234@Vik     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to verify
       | 5ec6b221c76845001ab7478a |
       | 5ec76ca1238b4a00190685ae |
@@ -259,7 +259,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh+60@successive.tech  | 1234@Vik     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to delete
       | 5ec6b221c76845001ab7478a |
       | 5ec76ca1238b4a00190685ae |
@@ -295,7 +295,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | systemadmin@marketcube.io         | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to verify
       | 5ecbf6e54101bb00199c3551 |
     And user enters other details for verify suppliers in Bulk
@@ -321,7 +321,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | systemadmin@marketcube.io         | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to delete
       | 5ecbf6e54101bb00199c3551 |
     And user enters other details for delete suppliers in Bulk
@@ -345,7 +345,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh+60@successive.tech  | 1234@Vik     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to verify
       |                              |
     And user enters other details for verify suppliers in Bulk
@@ -361,7 +361,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh+60@successive.tech  | 1234@Vik     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to delete
       |                                 |
     And user enters other details for delete suppliers in Bulk
@@ -377,7 +377,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh+60@successive.tech  | 1234@Vik     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to verify
       | 123456789012345678901234   |
     And user enters other details for verify suppliers in Bulk
@@ -391,7 +391,7 @@ Feature: API - Auth - Bulk Action like verify, delete suppliers.--  put---/user/
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh+60@successive.tech  | 1234@Vik     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters that vendor details he wants to delete
       | 123456789012345678901234   |
     And user enters other details for delete suppliers in Bulk

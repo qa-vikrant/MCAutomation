@@ -8,7 +8,7 @@
      When User is able to log into application
        | email                                 | password      |
        | vikrant.singh+60@successive.tech      | 123456789     |
-     Then user should be able to login to the system and store token
+     Then User should be able to login to the system and store token
      And user enters vendorId ,userRole and Access Method details of login of desired vendor
        | id                        | userRole   | onlyRead   |
        | <id>                      | <userRole> | <onlyRead> |
@@ -24,7 +24,7 @@
        When User is able to log into application
          | email                                 | password      |
          | vikrant.singh+60@successive.tech      | 123456789     |
-       Then user should be able to login to the system and store token
+       Then User should be able to login to the system and store token
        And user enters sellerId ,userRole and Access Method details of desired seller
          | id                        | userRole   | onlyRead   |
          | <id>                      | <userRole> | <onlyRead> |
@@ -41,7 +41,7 @@
        When User is able to log into application
          | email                                 | password      |
          | vikrant.singh+60@successive.tech      | 123456789     |
-       Then user should be able to login to the system and store token
+       Then User should be able to login to the system and store token
        And user enters sellerId ,userRole and Access Method details of desired seller
          | id                        | userRole   | onlyRead   |
          | <id>                      | <userRole> | <onlyRead> |
@@ -59,7 +59,7 @@
        When User is able to log into application
          | email                                 | password      |
          | vikrant.singh+62@successive.tech      | 1234567890    |
-       Then user should be able to login to the system and store token
+       Then User should be able to login to the system and store token
        And user enters vendorId ,userRole and Access Method details of login of desired vendor
          | id                        | userRole   | onlyRead   |
          | <id>                      | <userRole> | <onlyRead> |
@@ -76,7 +76,7 @@
        When User is able to log into application
          | email                                 | password      |
          | vikrant.singh+61@successive.tech      | 1234567890    |
-       Then user should be able to login to the system and store token
+       Then User should be able to login to the system and store token
        And user enters vendorId ,userRole and Access Method details of login of desired vendor
          | id                        | userRole   | onlyRead   |
          | <id>                      | <userRole> | <onlyRead> |
@@ -94,7 +94,7 @@
        When User is able to log into application
          | email                                 | password      |
          | vikrant.singh+61@successive.tech      | 1234567890    |
-       Then user should be able to login to the system and store token
+       Then User should be able to login to the system and store token
        And user enters vendorId ,userRole and Access Method details of login of desired vendor
          | id                        | userRole   | onlyRead   |
          | <id>                      | <userRole> | <onlyRead> |
@@ -111,7 +111,7 @@
        When User is able to log into application
          | email                                 | password       |
          | systemadmin@marketcube.io             | 12345678n@N    |
-       Then user should be able to login to the system and store token
+       Then User should be able to login to the system and store token
        And user enters vendorId ,userRole and Access Method details of login of desired vendor
          | id                        | userRole   | onlyRead   |
          | <id>                      | <userRole> | <onlyRead> |
@@ -129,7 +129,7 @@
        When User is able to log into application
          | email                                 | password       |
          | systemadmin@marketcube.io             | 12345678n@N    |
-       Then user should be able to login to the system and store token
+       Then User should be able to login to the system and store token
        And user enters vendorId ,userRole and Access Method details of login of desired vendor
          | id                        | userRole   | onlyRead   |
          | <id>                      | <userRole> | <onlyRead> |
@@ -146,7 +146,7 @@
        When User is able to log into application
          | email                                 | password       |
          | systemadmin@marketcube.io             | 12345678n@N    |
-       Then user should be able to login to the system and store token
+       Then User should be able to login to the system and store token
        And user enters sellerId ,userRole and Access Method details of desired seller
          | id                        | userRole   | onlyRead   |
          | <id>                      | <userRole> | <onlyRead> |
@@ -154,7 +154,7 @@
        Then user should be able to proxy access login successfully
        Examples:
          | id                        | userRole | onlyRead |
-         | 5e467ab03dcebee6ad14a23f  | seller   | false    |
+         | 5ec606dbde6a7c0019f397cb  | seller   | false    |
 
 
 
@@ -162,7 +162,7 @@
        When User is able to log into application
          | email                                 | password      |
          | vikrant.singh+60@successive.tech      | 123456789     |
-       Then user should be able to login to the system and store token
+       Then User should be able to login to the system and store token
        And user enters vendorId ,userRole and Access Method details of login of desired vendor
          | id                        | userRole   | onlyRead   |
          | <id>                      | <userRole> | <onlyRead> |
@@ -199,7 +199,7 @@
        When User is able to log into application
          | email                                 | password       |
          | systemadmin@marketcube.io             | 12345678n@N    |
-       Then user should be able to login to the system and store token
+       Then User should be able to login to the system and store token
        And user enters vendorId ,userRole and Access Method details of login of desired vendor
          | id                        | userRole   | onlyRead   |
          | <id>                      | <userRole> | <onlyRead> |
@@ -235,7 +235,7 @@
        When User is able to log into application
          | email                                 | password       |
          | systemadmin@marketcube.io             | 12345678n@N    |
-       Then user should be able to login to the system and store token
+       Then User should be able to login to the system and store token
        And user enters sellerId ,userRole and Access Method details of desired seller
          | id                        | userRole   | onlyRead   |
          | <id>                      | <userRole> | <onlyRead> |

@@ -1,33 +1,38 @@
-Feature: API - Register as a direct user
+Feature: API -Auth - Verify Email.--  put---  /user/verify-email
 
-    As a new vendor
-    I want to verify new registered Email id  on marketcube
-    So that I am able to access the platform and manage my inventory
+        As a new user(Vendor Role)
+        I want to verify new registered Email on marketcube app ,
+        for that user click on verification link ,where verification link got by user on their registered emailId
+        (new vendor confirms the token by clicking on a link that has been sent to its registered email)
 
-  Scenario: As a new user , vendor request for registration directly on marketcube app as a vendor and new registered Vendor verify their emailId
-    When New user enters the emaliId and password field for registration
-      | email    | password      |
-      | user+    | 123456789     |
-    And User make a request to get registered into the system
-    Then User should be registered successfully into the system
-    When new vendor confirms the token by clicking on a link that has been sent to its registered email
+  Scenario: User as a new Vendor wants to verify their emailId with the help of verification link in form of Token
+    When User enters the emaliId and password field for registration
+      | email             | password      |
+      | vikrant.singh+    | 123456789     |
+    And User make a request to get register into the system
+    Then User should be able to registered successfully into the system
+    And User enters the verification link in form of Token
       |     token       |
       |                 |
-    Then New Vendor should be registered successfully into the system and Vendor should get message as a Your Email is Verified Successfully.
+    And User make a request to confirms the token by clicking on a link that has been sent to its registered email
+    Then User should be able to verify their emailId and Vendor should get message as a Your Email is Verified Successfully.
 
 
 
-  Scenario Outline: User verify their emailId without follow token field validation
-    When new vendor enters the token to verify email
-      |      token        |
-      |     <token>       |
-    Then vendor should not be able to register into the system and vendor should get a validation messages
+  Scenario Outline: Without follow field validation user wants to verify their emailId
+    And User enters the verification link in form of Token
+      |     token       |
+      |    <token>      |
+    And User make a request to confirms the token by clicking on a link that has been sent to its registered email
+    Then User should not be able to verify their emailId and user should get validation error message
       | Token is required.           |
       | Invalid token provided       |
-      | User already verified.       |
+      | Invalid token provided       |
+      | Token is expired, Please request for resend verification link      |
     Examples:
-      |     token                        |
-      |                                  |
-      |  12343444555555555               |
-      |  e04cebcdca64cb1a2fd7bb473765ea2724ba77a8cb3a618027f2b65369a399e138c5bb4fb13565fd7e634b40be9a27510e190913198de40912f5c23e38712f21               |
+      |     token                                          |
+      |                                                    |
+      |  1111111111111111111111111111111                   |
+      |  aaaaaaaaaaaassssssssssssssssssssssssssssssssss    |
+      |  310a818842278e1ddbaf2a271b478d802da7862b1dbf640da98dd7dc7efbe5f3d42ef7674baf46948169c8adb167a736c9458e0fea92ee1c8cf6e502c1df3f22               |
 

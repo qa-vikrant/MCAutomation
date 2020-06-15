@@ -2,7 +2,7 @@ package net.mc.tools.helpers;
 
 import com.jayway.restassured.response.Response;
 import net.mc.tools.models.responseForAllModel.ErrorResponseCommonForAll;
-import net.mc.tools.services.auth.RegisterService;
+import net.mc.tools.services.RegisterSupplierBySelfService;
 import org.junit.Assert;
 
 import java.text.DateFormatSymbols;
@@ -29,7 +29,7 @@ public class HelperClass
             {
                 if (jsonResponse.getStatusCode() >= 400)
                 {
-                    errorResponseCommonForAll = RegisterService.gson().fromJson(jsonResponse.body().prettyPrint(), ErrorResponseCommonForAll.class);
+                    errorResponseCommonForAll = RegisterSupplierBySelfService.gson().fromJson(jsonResponse.body().prettyPrint(), ErrorResponseCommonForAll.class);
                     Assert.assertEquals("error", errorResponseCommonForAll.getStatus());
                     Assert.assertTrue(errorResponseCommonForAll.getData() == null);
                     if(errorMessage.get(i).equalsIgnoreCase(errorResponseCommonForAll.getError()))

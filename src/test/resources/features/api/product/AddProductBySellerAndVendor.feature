@@ -11,8 +11,8 @@ Feature: API - Product - Add Product.-  post -  /product
   Scenario Outline: Login with valid registered user details as a seller and user wants to add a product on marketcube for vendor
     When User is able to log into application
       | email                                    | password       |
-      | vikrant.singh+60@successive.tech         | 1234@Vik       |
-    Then user should be able to login to the system and store token
+      | vikrant.singh+111@successive.tech        | 1234@Vik       |
+    Then User should be able to login to the system and store token
     And user enters tag details for new product
       |  |
     And user enter image details for new product
@@ -25,15 +25,15 @@ Feature: API - Product - Add Product.-  post -  /product
     When user make request to add product on marketcube
     Then user should be able to add product on marketcube
     Examples:
-      | title             | description               | handle   | vendor    | vendorId                    | collections   | productType   | isTaxable   | price   | comparePrice | barcode   | inventoryManagement   | sku   | isShipping   | weight   | weightUnit   | fulfillmentService   | option1   | option2   | option3   | isWebhook   | shopifyProductId   | markUp   |  discount  | inventoryQuantity   |
-      | Nike              | API Automation by vikrant | handle   | vendor64 | 5ec61d5dc54ca1001a9f0ac0    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
-      | Nike              | API Automation by vikrant | handle   | vendor64 | 5ec61d5dc54ca1001a9f0ac0    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
-      | Nike              | API Automation by vikrant | handle   | vendor64 | 5ec61d5dc54ca1001a9f0ac0    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
-      | Nike              | API Automation by vikrant | handle   | vendor64 | 5ec61d5dc54ca1001a9f0ac0    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
-      | Nike              | API Automation by vikrant | handle   | vendor64 | 5ec61d5dc54ca1001a9f0ac0    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
-      | Nike              | API Automation by vikrant | handle   | vendor64 | 5ec61d5dc54ca1001a9f0ac0    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
-      | Nike              | API Automation by vikrant | handle   | vendor64 | 5ec61d5dc54ca1001a9f0ac0    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
-      | Nike              | API Automation by vikrant | handle   | vendor64 | 5ec61d5dc54ca1001a9f0ac0    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
+      | title             | description               | handle   | vendor   | vendorId                    | collections   | productType   | isTaxable   | price   | comparePrice | barcode   | inventoryManagement   | sku   | isShipping   | weight   | weightUnit   | fulfillmentService   | option1   | option2   | option3   | isWebhook   | shopifyProductId   | markUp   |  discount  | inventoryQuantity   |
+      | Nike              | API Automation by vikrant | handle   | vikrant575023 | 5ee2ff916ea6cf00124d4602    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
+      | Nike              | API Automation by vikrant | handle   | vikrant575023 | 5ee2ff916ea6cf00124d4602    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
+      | Nike              | API Automation by vikrant | handle   | vikrant575023 | 5ee2ff916ea6cf00124d4602    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
+      | Nike              | API Automation by vikrant | handle   | vikrant575023 | 5ee2ff916ea6cf00124d4602    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
+      | Nike              | API Automation by vikrant | handle   | vikrant575023 | 5ee2ff916ea6cf00124d4602    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
+      | Nike              | API Automation by vikrant | handle   | Vikrant112 | 5ee235e06ea6cf00124d446a    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
+      | Nike              | API Automation by vikrant | handle   | Vikrant112 | 5ee235e06ea6cf00124d446a    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
+      | Nike              | API Automation by vikrant | handle   | Vikrant112 | 5ee235e06ea6cf00124d446a    |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  | size      | color     | material  |             |                    |          |            |                     |
 #kartikey say that userid field is not required .............................token is sufficient...
 
 
@@ -45,7 +45,7 @@ Feature: API - Product - Add Product.-  post -  /product
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh+61@successive.tech      | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for new product
       |  |
     And user enter image details for new product
@@ -69,7 +69,7 @@ Feature: API - Product - Add Product.-  post -  /product
     When User is able to log into application
       | email                                 | password       |
       | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for new product
       |  |
     And user enter image details for new product
@@ -94,7 +94,7 @@ Feature: API - Product - Add Product.-  post -  /product
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for new product
       |  |
     And user enter image details for new product
@@ -138,7 +138,7 @@ Feature: API - Product - Add Product.-  post -  /product
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki4321   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for new product
       |  |
     And user enter image details for new product
@@ -179,7 +179,7 @@ Feature: API - Product - Add Product.-  post -  /product
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for new product
       |  |
     And user enter image details for new product
@@ -204,7 +204,7 @@ Feature: API - Product - Add Product.-  post -  /product
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki4321   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for new product
       |  |
     And user enter image details for new product
@@ -230,7 +230,7 @@ Feature: API - Product - Add Product.-  post -  /product
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for new product
       |  |
     And user enter image details for new product
@@ -258,7 +258,7 @@ Feature: API - Product - Add Product.-  post -  /product
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh+60@successive.tech      | 123456789      |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for new product
       |  |
     And user enter image details for new product
@@ -283,7 +283,7 @@ Feature: API - Product - Add Product.-  post -  /product
     When User is able to log into application
       | email                                   | password         |
       | vikrant.singh+1857@successive.tech      | 1234567890@H     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for new product
       |  |
     And user enter image details for new product

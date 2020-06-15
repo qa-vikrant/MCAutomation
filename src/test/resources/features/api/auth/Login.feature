@@ -28,6 +28,7 @@ Feature:  API --Auth -- Login a User--  post---  /user/login
     Then User should not be able to login into to the system and user should get validation error message
       |  Incorrect credentials provided   |
       |  Incorrect credentials provided   |
+      |  Incorrect credentials provided   |
       |  Password is required.            |
       |  Email is required.               |
       |  Email is required.               |
@@ -36,6 +37,7 @@ Feature:  API --Auth -- Login a User--  post---  /user/login
       | email                                 | password        |
       | TRrsggsvb@gassbbb                     | 123456789       |
       | vikrant.singh@successive.tech         | 987654321       |
+      | vikrant.singh                         | 123456789       |
       | vikrant.singh@successive.tech         |                 |
       |                                       | 123456789       |
       |                                       |                 |

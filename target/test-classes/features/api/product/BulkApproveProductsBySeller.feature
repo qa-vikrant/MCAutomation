@@ -11,7 +11,7 @@ Feature: API -  Product - Bulk Approve Products.- put-  /product/bulk-approve
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Approve products
       | 5e9ed2c4d1d53c00180cd857    |
       | 5e9ed2c66d2dd5001778fad0    |
@@ -31,7 +31,7 @@ Feature: API -  Product - Bulk Approve Products.- put-  /product/bulk-approve
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Approve products
       | 5e9421c24c4af60018b45bd5    |
       | 5e9421c24c4af60018b45bd5    |
@@ -52,7 +52,7 @@ Feature: API -  Product - Bulk Approve Products.- put-  /product/bulk-approve
     When User is able to log into application
       | email                                 | password       |
       | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Approve products
       | 5e9421c24c4af60018b45bd5    |
       | 5e9421c24c4af60018b45bd5    |
@@ -74,7 +74,7 @@ Feature: API -  Product - Bulk Approve Products.- put-  /product/bulk-approve
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Approve products
       |     |
     And user enter actions details to Approve products
@@ -92,7 +92,7 @@ Feature: API -  Product - Bulk Approve Products.- put-  /product/bulk-approve
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Approve products
       |  121212121221   |
     And user enter actions details to Approve products
@@ -110,7 +110,7 @@ Feature: API -  Product - Bulk Approve Products.- put-  /product/bulk-approve
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Approve products
       | 5e9421c24c4af60018b45bd5    |
       | 5e9421c24c4af60018b45bd5    |

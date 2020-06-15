@@ -10,7 +10,7 @@ Feature:
     When User is able to log into application
       | email                         | password   |
       | systemadmin@marketcube.io     | 123456789  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                     |    userType     |
       |  59c134d3c8efb4001a2bf1ad   |    seller       |
@@ -22,7 +22,7 @@ Feature:
     When User is able to log into application
       | email                         | password   |
       | systemadmin@marketcube.io     | 123456789  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                     |    userType       |
       |  <userId>                   |    <userType>     |
@@ -47,7 +47,7 @@ Feature:
     When User is able to log into application
       | email                         | password   |
       | systemadmin@marketcube.io     | 123456789  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                     |    userType     |
       |  59c134d3c8efb4001a2bf1ad   |    supplier     |
@@ -59,7 +59,7 @@ Feature:
     When User is able to log into application
       | email                         | password   |
       | systemadmin@marketcube.io     | 123456789  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                       |    userType       |
       |  <userId>                     |    <userType>     |
@@ -84,7 +84,7 @@ Feature:
     When User is able to log into application
       | email                             | password    |
       | vikrant.singh@successive.tech     | HaiVikki12  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                     |    userType     |
       |  5e29912fbfec74a0272e9a92   |    supplier     |
@@ -96,7 +96,7 @@ Feature:
     When User is able to log into application
       | email                             | password    |
       | vikrant.singh@successive.tech     | HaiVikki12  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                       |    userType       |
       |  <userId>                     |    <userType>     |
@@ -121,7 +121,7 @@ Feature:
     When User is able to log into application
       | email                             | password    |
       | vikrant.singh@successive.tech     | 1234567890  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                       |    userType       |
       |  5e2996260da2580011251edb     |    supplier       |
@@ -134,7 +134,7 @@ Feature:
     When User is able to log into application
       | email                             | password    |
       | vikrant.singh@successive.tech     | 1234567890  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                       |    userType       |
       |  5e2996260da2580011251edb      |    seller        |
@@ -149,7 +149,7 @@ Feature:
     When User is able to log into application
       | email                             | password    |
       | vikrant.singh@successive.tech     | 1234567890  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                       |    userType       |
       |  <userId>                     |    <userType>     |
@@ -168,7 +168,7 @@ Feature:
     When User is able to log into application
       | email                             | password    |
       | vikrant.singh@successive.tech     | 1234567890  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                       |    userType       |
       |  <userId>                     |    <userType>     |
@@ -205,7 +205,7 @@ Feature:
     When User is able to log into application
       | email                                | password    |
       | vikrant.singh@successive.tech        | HaiVikki12  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter the requesterID and userType
       |  userId                     |    userType     |
       |  <userId>                   |    <userType>   |

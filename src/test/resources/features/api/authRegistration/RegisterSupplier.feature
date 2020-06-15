@@ -6,8 +6,8 @@ Feature: API - Auth - Register supplier by Seller / SystemAdmin--  post--  /user
 
   Scenario Outline: Login with valid registered user details as a seller and user want to create new vendor themselves using their form
     When User is able to log into application
-      | email                          | password    |
-      | vikrant.singh@successive.tech  | 1234@Vik    |
+      | email                              | password    |
+      | vikrant.singh+111@successive.tech  | 1234@Vik    |
     Then User should be able to login to the system and store token
     And user enters details of new vendor
       | email        | brandName   | firstName   | lastName   | phoneNumber   | address      | city    | country   |  pinCode   | isReadOnly   | isOtp   | isVerified   | isVendor   | password   |
@@ -15,8 +15,8 @@ Feature: API - Auth - Register supplier by Seller / SystemAdmin--  post--  /user
     And user make a request to register supplier
     Then new vendor should be registered successfully into the system
     Examples:
-      | email          | brandName | firstName | lastName | phoneNumber | address         | city  | country |  pinCode |isReadOnly | isOtp | isVerified | isVendor | password   |
-      | vikrant.singh+ | Testing   | Vikrant   | Singh    | 9898989898  | testing address | Noida | India   | 201301   | false     | true  | true       | true     | Mohit@1989 |
+      | email          | brandName | firstName | lastName | phoneNumber | address         | city  | country |  pinCode |isReadOnly | isOtp | isVerified  | isVendor | password   |
+      | vikrant.singh+ | Testing   | Vikrant   | Singh    | 9898989898  | testing address | Noida | India   | 201301   | false     | true  | false       | true     | Mohit@1989 |
 
 
 

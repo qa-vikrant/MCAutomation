@@ -8,11 +8,15 @@ Feature: API -  Auth - Resend otp email.--  put---  /user/resend-otp
         User wants to Resend otp email of any vendors in form of Reset Vendor Credentials( Password Reset on your account has been requested.)
 
 
+        Action---in form of Reset Vendor Credentials Button click by seller( User requested to reset vendor password for marketplace account.)
+        then user click on marketplace login link and enters the email and password that user got by their registered emailId and enters the new password
+
+
 
   Scenario Outline: Login with valid registered user details as a Seller and user wants to Reset own Vendor Credentials.
     When User is able to log into application
-      | email                             | password     |
-      | vikrant.singh+60@successive.tech  | 1234@Vik     |
+      | email                              | password      |
+      | vikrant.singh+100@successive.tech  | 123456789     |
     Then User should be able to login to the system and store token
     And user enters desired vendor details to Reset Credentials
       | email                             | id                        |
@@ -20,8 +24,8 @@ Feature: API -  Auth - Resend otp email.--  put---  /user/resend-otp
     And user make a request to Reset Vendor Credentials
     Then user should be able to Reset Vendor Credentials
     Examples:
-      | email                             | id                        |
-      | vikrant.singh+7@successive.tech   | 5ed4fec71c0841001251023d  |
+      | email                               | id                        |
+      | vikrant.singh+101@successive.tech   | 5ed8a71f146a2c0019c666d9  |
 
 
   Scenario Outline: Login with valid registered user details as a System-Admin and user wants to Reset Vendor Credentials.
@@ -36,7 +40,7 @@ Feature: API -  Auth - Resend otp email.--  put---  /user/resend-otp
     Then user should be able to Reset Vendor Credentials
     Examples:
       | email                               | id                        |
-      | vikrant.singh+007@successive.tech   | 5e2996260da2580011251edb  |
+      | vikrant.singh+101@successive.tech   | 5ed8a71f146a2c0019c666d9  |
 
 
 
@@ -52,8 +56,8 @@ Feature: API -  Auth - Resend otp email.--  put---  /user/resend-otp
     Then user should not be able to Reset Vendor Credentials and user should get validation error message
        |  Invalid supplier provided, Not found. |
     Examples:
-      | email                             | id                        |
-      | vikrant.singh+7@successive.tech   | 5ed4fec71c0841001251023d  |
+      | email                               | id                        |
+      | vikrant.singh+101@successive.tech   | 5ed8a71f146a2c0019c666d9  |
 
 
 
@@ -70,8 +74,8 @@ Feature: API -  Auth - Resend otp email.--  put---  /user/resend-otp
     Then user should not be able to Reset Vendor Credentials and user should get validation error message
       |  User is not authorized to perform this action. |
     Examples:
-      | email                             | id                        |
-      | vikrant.singh+7@successive.tech   | 5ed4fec71c0841001251023d  |
+      | email                               | id                        |
+      | vikrant.singh+101@successive.tech   | 5ed8a71f146a2c0019c666d9  |
 
 
 
@@ -133,8 +137,8 @@ Feature: API -  Auth - Resend otp email.--  put---  /user/resend-otp
 
   Scenario Outline: User make a request to Reset Vendor Credentials with valid field by passing Incorrect/blank token data
     And user enters desired vendor details to Reset Credentials
-      | email                             | id                        |
-      | vikrant.singh+7@successive.tech   | 5ed4fec71c0841001251023d  |
+      | email                               | id                        |
+      | vikrant.singh+101@successive.tech   | 5ed8a71f146a2c0019c666d9  |
     When user make request to Reset Vendor Credentials with Incorrect/blank token field in form of without login credentials
       |  token                      |
       | <token>                     |
