@@ -11,7 +11,7 @@ for rejected product by seller we perform action ,as  seller perform unrejected 
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh+60@successive.tech      | 123456789      |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Un-Delete products
       | 5eb90bc6d8e20e00170a95e1    |
       | 5eb90abdd8e20e00170a95de    |
@@ -31,7 +31,7 @@ for rejected product by seller we perform action ,as  seller perform unrejected 
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh+61@successive.tech      | 1234567890      |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Un-Delete products
       | 5eb90bc6d8e20e00170a95e1    |
       | 5eb90abdd8e20e00170a95de    |
@@ -73,7 +73,7 @@ for rejected product by seller we perform action ,as  seller perform unrejected 
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Un-Delete products
       |     |
     And user enter actions details to Un-Delete products
@@ -95,7 +95,7 @@ for rejected product by seller we perform action ,as  seller perform unrejected 
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Un-Delete products
       |  121212121221   |
     And user enter actions details to Un-Delete products
@@ -116,7 +116,7 @@ for rejected product by seller we perform action ,as  seller perform unrejected 
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Un-Delete products
       | 5e9421c24c4af60018b45bd5    |
       | 5e9421c24c4af60018b45bd5    |
@@ -168,7 +168,7 @@ for rejected product by seller we perform action ,as  seller perform unrejected 
     When User is able to log into application
       | email                              | password       |
       | vikrant.singh@successive.tech      | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Un-Delete products
       | 5eb90abdd8e20e00170a95de    |
     And user enter actions details to Un-Delete products
@@ -187,7 +187,7 @@ for rejected product by seller we perform action ,as  seller perform unrejected 
     When User is able to log into application
       | email                              | password       |
       | vikrant.singh@successive.tech      | HaiVikki4321   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters productIds to Un-Delete products
       | 5eb90bc6d8e20e00170a95e1    |
       | 5eb90abdd8e20e00170a95de    |

@@ -1,6 +1,7 @@
 package net.mc.tools.steps;
 
 import com.jayway.restassured.response.Response;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.mc.tools.helpers.HelperClass;
@@ -60,5 +61,8 @@ public class UpdateprofileofSupplierSteps
     {
         josnResponse = UpdateprofileofSupplierService.UpdateprofileRequest(updateprofileofSupplierRequestModel, tokenMessage1.get(0).gettoken());
     }
+
+
+
 
 }

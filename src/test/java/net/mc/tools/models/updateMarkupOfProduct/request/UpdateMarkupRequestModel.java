@@ -1,6 +1,7 @@
 package net.mc.tools.models.updateMarkupOfProduct.request;
 
-public class UpdateMarkupRequestModel {
+public class UpdateMarkupRequestModel
+{
 
     private String sellerId;
 

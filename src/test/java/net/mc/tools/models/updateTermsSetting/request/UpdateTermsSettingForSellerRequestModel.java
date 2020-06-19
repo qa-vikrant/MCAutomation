@@ -2,28 +2,28 @@ package net.mc.tools.models.updateTermsSetting.request;
 
 public class UpdateTermsSettingForSellerRequestModel {
 
-    private String isReturn;
+    private Boolean isReturn;
 
-    private String returnPeriod;
+    private Integer returnPeriod;
 
     private PaymentTerms paymentTerms;
 
-    public String getIsReturn ()
+    public Boolean getIsReturn ()
     {
         return isReturn;
     }
 
-    public void setIsReturn (String isReturn)
+    public void setIsReturn (Boolean isReturn)
     {
         this.isReturn = isReturn;
     }
 
-    public String getReturnPeriod ()
+    public Integer getReturnPeriod ()
     {
         return returnPeriod;
     }
 
-    public void setReturnPeriod (String returnPeriod)
+    public void setReturnPeriod (Integer returnPeriod)
     {
         this.returnPeriod = returnPeriod;
     }

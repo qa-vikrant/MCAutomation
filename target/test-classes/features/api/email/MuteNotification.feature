@@ -7,7 +7,7 @@ Feature: API -  Email - Mute Notification.  post  /email/mute-notification
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki432     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enter label information that needs to be muted
       | newOrderSeller                          |
       | packingSlip                             |
@@ -31,7 +31,7 @@ Feature: API -  Email - Mute Notification.  post  /email/mute-notification
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki432     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enter label information that needs to be muted
       ||
     And user enter reset information
@@ -45,7 +45,7 @@ Feature: API -  Email - Mute Notification.  post  /email/mute-notification
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki432     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enter label information that needs to be muted
       | newOrderSeller                          |
       | vendorBulkUploadNotification            |
@@ -63,7 +63,7 @@ Feature: API -  Email - Mute Notification.  post  /email/mute-notification
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki4321    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enter label information that needs to be muted
       | newOrderSupplier                        |
       | packingSlip                             |
@@ -89,7 +89,7 @@ Feature: API -  Email - Mute Notification.  post  /email/mute-notification
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki4321    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enter label information that needs to be muted
       ||
     And user enter reset information
@@ -103,7 +103,7 @@ Feature: API -  Email - Mute Notification.  post  /email/mute-notification
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki4321    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enter label information that needs to be muted
       | newOrderSupplier         |
       | vendorProfileUpdate      |
@@ -123,7 +123,7 @@ Feature: API -  Email - Mute Notification.  post  /email/mute-notification
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki432     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enter label information and reset information that needs to be muted
       | label          | isResetAll  |
       | newOrderSeller | false       |
@@ -135,7 +135,7 @@ Feature: API -  Email - Mute Notification.  post  /email/mute-notification
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki4321    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enter label information and reset information that needs to be muted
       | label            | isResetAll  |
       | newOrderSupplier | false       |
@@ -150,7 +150,7 @@ Feature: API -  Email - Mute Notification.  post  /email/mute-notification
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki432     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enter label information and reset information that needs to be muted
       | label          | isResetAll  |
       | newOrderSeller | true        |
@@ -162,7 +162,7 @@ Feature: API -  Email - Mute Notification.  post  /email/mute-notification
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki4321    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enter label information and reset information that needs to be muted
       | label            | isResetAll  |
       | newOrderSupplier | true        |
@@ -178,7 +178,7 @@ Feature: API -  Email - Mute Notification.  post  /email/mute-notification
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki432     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enter label information that needs to be muted
       ||
     And user enter reset information

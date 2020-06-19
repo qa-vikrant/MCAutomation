@@ -7,7 +7,7 @@ Feature: Order - Fetch list of orders - get -  /order
     When User is able to log into application
       | email                         | password     |
       | systemadmin@marketcube.io     | 12345678n@N  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for order list
       |  userId                     |
       |  59c134d3c8efb4001a2bf1ad   |
@@ -19,7 +19,7 @@ Feature: Order - Fetch list of orders - get -  /order
     When User is able to log into application
       | email                             | password     |
       | vikrant.singh@successive.tech     | HaiVikki12   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for order list
       |  userId                     |
       |  5e29912fbfec74a0272e9a92   |
@@ -31,7 +31,7 @@ Feature: Order - Fetch list of orders - get -  /order
     When User is able to log into application
       | email                                | password     |
       | vikrant.singh@successive.tech        | 1234567890   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for order list
       |  userId                     |
       |  5e2996260da2580011251edb   |
@@ -43,7 +43,7 @@ Feature: Order - Fetch list of orders - get -  /order
     When User is able to log into application
       | email                                | password     |
       | vikrant.singh+13@successive.tech     | 1234512345   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for order list
       |  userId                     |
       |  5e3baa47df34800019a752d4   |
@@ -55,7 +55,7 @@ Feature: Order - Fetch list of orders - get -  /order
     When User is able to log into application
       | email                                | password     |
       | vikrant.singh@successive.tech        | 1234567890   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for order list
       |  userId                     |
       |  <userId>                   |
@@ -77,7 +77,7 @@ Feature: Order - Fetch list of orders - get -  /order
     When User is able to log into application
       | email                                | password     |
       | vikrant.singh@successive.tech        | 1234567890   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for order list
       |  userId                     |
       |  5ba08432171487000f09697a   |
@@ -92,7 +92,7 @@ Feature: Order - Fetch list of orders - get -  /order
     When User is able to log into application
       | email                                | password     |
       | vikrant.singh@successive.tech        | HaiVikki12   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters the requesterID for order list
       |  userId                        |
       |  5b9fa03e7ef81d000f031b42      |
@@ -122,24 +122,26 @@ Feature: Order - Fetch list of orders - get -  /order
 
 #  by Mohit sir
 
-  Scenario: Login with valid registered user details as  System admin and user request fetch order
-    When User is able to log into application
-      | email                         | password   |
-      | systemadmin@marketcube.io     | 123456789  |
-    Then user should be able to login to the system and store token
-    When user enters search filter
-      | searchFilter|
-      | status     |
-    And User enters details of order to be fetched
-      | userId                    | sortName          | sortOrder | perPage | page | filter  | search | searchFilter |
-      | 5dc93694b47bb36e90665083  | vendor            | asc       | 10      | skip | pending | 1      | status       |
-    Then User should be able to fetch order
+#  Scenario: Login with valid registered user details as  System admin and user request fetch order
+#    When User is able to log into application
+#      | email                         | password   |
+#      | systemadmin@marketcube.io     | 123456789  |
+#    Then User should be able to login to the system and store token
+#    When user enters search filter
+#      | searchFilter|
+#      | status     |
+#    And User enters details of order to be fetched
+#      | userId                    | sortName          | sortOrder | perPage | page | filter  | search | searchFilter |
+#      | 5dc93694b47bb36e90665083  | vendor            | asc       | 10      | skip | pending | 1      | status       |
+#    Then User should be able to fetch order
+
+
 
   Scenario: Login with valid registered user details and validate fetch order errors
     When User is able to log into application
       | email                         | password  |
       | mohit.agrawal@successive.tech | Mohit@1989 |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters search filter
       | searchFilter |
       | status       |

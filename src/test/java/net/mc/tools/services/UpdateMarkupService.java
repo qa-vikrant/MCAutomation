@@ -9,29 +9,18 @@ import net.mc.tools.models.updateMarkupOfProduct.request.UpdateMarkupRequestMode
 
 import java.util.List;
 
-public class UpdateMarkupService extends ApiHelper {
+public class UpdateMarkupService extends ApiHelper
+{
 
-    public static Gson gson;
-
-    public static Response requestWithToken(List<UpdateMarkupRequestModel> updateMarkupRequestModel, String token) {
+    public static Response UpdateMarkupRequest(UpdateMarkupRequestModel updateMarkupRequestModel, String token)
+    {
         Response response;
+        System.out.println("Json Data Before hitting api  is "+gson().toJson(updateMarkupRequestModel)+" Token Message is : ( "+token+")");
 
-        response = authWithToken(token).body(gson().toJson(updateMarkupRequestModel.get(0))).put("user/markup");
+        response = authWithToken(token).body(gson().toJson(updateMarkupRequestModel)).put("user/markup");
 
+        System.out.println("Json Data After hitting api  is "+response.body().prettyPrint());
         return response;
-    }
-
-    //Specify all one time default Gson config
-    public static Gson gson() {
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        gson = gson(gsonBuilder);
-        return gson;
-    }
-
-    //Custom Gson config to override Default Gson  configuration
-    public static Gson gson(GsonBuilder gsonBuilder) {
-        gson = gsonBuilder.create();
-        return gson;
     }
 
 

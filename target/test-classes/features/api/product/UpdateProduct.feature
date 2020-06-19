@@ -11,7 +11,7 @@ Feature: API -  Product - Update Product.  put  /product
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for Update product
       |  |
     And user enter image details for Update product
@@ -36,7 +36,7 @@ Feature: API -  Product - Update Product.  put  /product
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki4321   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for Update product
       |  |
     And user enter image details for Update product
@@ -57,26 +57,26 @@ Feature: API -  Product - Update Product.  put  /product
 
 
 
-  Scenario Outline: Login with valid registered user details as a System Admin and user wants to Update a product on marketcube for vendor
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    And user enters tag details for Update product
-      |  |
-    And user enter image details for Update product
-      |  |
-    And user enter variant details for Update product
-      |  |
-    And user enter other details for Update product
-      | id     | title   | description   | handle   | vendor   | vendorId  | collections   | productType   | isTaxable   | price   | comparePrice    | barcode   | inventoryManagement   | sku   | isShipping   | weight   | weightUnit   | fulfillmentService   | option1   | option2   | option3   | markUp   |  discount  | inventoryQuantity   |
-      | <id>  | <title> | <description> | <handle> | <vendor> | <vendorId> | <collections> | <productType> | <isTaxable> | <price> | <comparePrice>  | <barcode> | <inventoryManagement> | <sku> | <isShipping> | <weight> | <weightUnit> | <fulfillmentService> | <option1> | <option2> | <option3> | <markUp> | <discount> | <inventoryQuantity> |
-    When user make request to Update product on marketcube
-    Then user should be able to Update product on marketcube
-    Examples:
-      | id                       | title   | description               | handle   | vendor   | vendorId                 | collections   | productType   | isTaxable   | price   | comparePrice | barcode   | inventoryManagement   | sku   | isShipping   | weight   | weightUnit   | fulfillmentService   | option1   | option2   | option3   | markUp   |  discount  | inventoryQuantity   |
-      | 5e99619a87858600122a449d | Nike    | API Automation by vikrant | handle   | Vikrant  | 5e2996260da2580011251edb |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  |           |           |           |          |            |                     |
-# without  "isWebhook"and"shopifyProductId"   field , we  adding product by system admin work as a vendor not given -------------------------
+#  Scenario Outline: Login with valid registered user details as a System Admin and user wants to Update a product on marketcube for vendor
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    And user enters tag details for Update product
+#      |  |
+#    And user enter image details for Update product
+#      |  |
+#    And user enter variant details for Update product
+#      |  |
+#    And user enter other details for Update product
+#      | id     | title   | description   | handle   | vendor   | vendorId  | collections   | productType   | isTaxable   | price   | comparePrice    | barcode   | inventoryManagement   | sku   | isShipping   | weight   | weightUnit   | fulfillmentService   | option1   | option2   | option3   | markUp   |  discount  | inventoryQuantity   |
+#      | <id>  | <title> | <description> | <handle> | <vendor> | <vendorId> | <collections> | <productType> | <isTaxable> | <price> | <comparePrice>  | <barcode> | <inventoryManagement> | <sku> | <isShipping> | <weight> | <weightUnit> | <fulfillmentService> | <option1> | <option2> | <option3> | <markUp> | <discount> | <inventoryQuantity> |
+#    When user make request to Update product on marketcube
+#    Then user should be able to Update product on marketcube
+#    Examples:
+#      | id                       | title   | description               | handle   | vendor   | vendorId                 | collections   | productType   | isTaxable   | price   | comparePrice | barcode   | inventoryManagement   | sku   | isShipping   | weight   | weightUnit   | fulfillmentService   | option1   | option2   | option3   | markUp   |  discount  | inventoryQuantity   |
+#      | 5e99619a87858600122a449d | Nike    | API Automation by vikrant | handle   | Vikrant  | 5e2996260da2580011251edb |               |               |             | 12      | 12           |           |                       | 12    |   true       | 12       | kg           | yes                  |           |           |           |          |            |                     |
+## without  "isWebhook"and"shopifyProductId"   field , we  adding product by system admin work as a vendor not given -------------------------
 
 
 
@@ -86,7 +86,7 @@ Feature: API -  Product - Update Product.  put  /product
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for Update product
       |  |
     And user enter image details for Update product
@@ -135,7 +135,7 @@ Feature: API -  Product - Update Product.  put  /product
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for Update product
       |  |
     And user enter image details for Update product
@@ -211,7 +211,7 @@ Feature: API -  Product - Update Product.  put  /product
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh+60@successive.tech      | 123456789      |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for Update product
       |  |
     And user enter image details for Update product
@@ -236,7 +236,7 @@ Feature: API -  Product - Update Product.  put  /product
     When User is able to log into application
       | email                                   | password         |
       | vikrant.singh+1857@successive.tech      | 1234567890@H     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enters tag details for Update product
       |  |
     And user enter image details for Update product

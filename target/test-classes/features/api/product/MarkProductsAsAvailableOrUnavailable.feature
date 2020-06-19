@@ -11,7 +11,7 @@ Feature: Product - Mark Products as Available - put - /product/mark-publish
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object ids of product
       | 5e53831cc317d30017cb894f     |
       | 5e53831cc317d30017cb894f     |
@@ -24,7 +24,7 @@ Feature: Product - Mark Products as Available - put - /product/mark-publish
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object ids of product
       | 5e53831cc317d30017cb894f     |
       | 5e53831cc317d30017cb894f     |
@@ -38,7 +38,7 @@ Feature: Product - Mark Products as Available - put - /product/mark-publish
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object ids of product
       |                       |
     And user make a request to mark the Products as a Unavailable for customers
@@ -52,7 +52,7 @@ Feature: Product - Mark Products as Available - put - /product/mark-publish
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object ids of product
       |                       |
     When user make a request to mark the Products as a Available for customers
@@ -65,7 +65,7 @@ Feature: Product - Mark Products as Available - put - /product/mark-publish
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object ids of product
       | 12345678901234567890  |
     And user make a request to mark the Products as a Unavailable for customers
@@ -78,7 +78,7 @@ Feature: Product - Mark Products as Available - put - /product/mark-publish
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object ids of product
       | 12345678901234567890  |
     When user make a request to mark the Products as a Available for customers
@@ -88,38 +88,38 @@ Feature: Product - Mark Products as Available - put - /product/mark-publish
 
 
 
-  Scenario: Login with valid registered user details as a System-Admin and user make a request for mark the Products as a Unavailable customers
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When user enters the Object ids of product
-      | 5e53831cc317d30017cb894f     |
-      | 5e53831cc317d30017cb894f     |
-      | 5e537878edb8830017e45195     |
-    And user make a request to mark the Products as a Unavailable for customers
-    Then user should not be able to mark the Products as a Unavailable and user should get a validation message
-      | User is not authorized to perform this action  |
+#  Scenario: Login with valid registered user details as a System-Admin and user make a request for mark the Products as a Unavailable customers
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When user enters the Object ids of product
+#      | 5e53831cc317d30017cb894f     |
+#      | 5e53831cc317d30017cb894f     |
+#      | 5e537878edb8830017e45195     |
+#    And user make a request to mark the Products as a Unavailable for customers
+#    Then user should not be able to mark the Products as a Unavailable and user should get a validation message
+#      | User is not authorized to perform this action  |
 
-
-  Scenario: Login with valid registered user details as a System-Admin and user make a request for mark the Products as a available for customers
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When user enters the Object ids of product
-      | 5e53831cc317d30017cb894f     |
-      | 5e53831cc317d30017cb894f     |
-      | 5e537878edb8830017e45195     |
-    When user make a request to mark the Products as a Available for customers
-    Then user should not be able to mark the Products as a Available and user should get a validation message
-      | User is not authorized to perform this action  |
+#
+#  Scenario: Login with valid registered user details as a System-Admin and user make a request for mark the Products as a available for customers
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then user should be able to login to the system and store token
+#    When user enters the Object ids of product
+#      | 5e53831cc317d30017cb894f     |
+#      | 5e53831cc317d30017cb894f     |
+#      | 5e537878edb8830017e45195     |
+#    When user make a request to mark the Products as a Available for customers
+#    Then user should not be able to mark the Products as a Available and user should get a validation message
+#      | User is not authorized to perform this action  |
 
   Scenario: Login with valid registered user details as a Vendor and user make a request for mark the Products as a Unavailable customers
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object ids of product
       | 5e53831cc317d30017cb894f     |
       | 5e53831cc317d30017cb894f     |
@@ -133,7 +133,7 @@ Feature: Product - Mark Products as Available - put - /product/mark-publish
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters the Object ids of product
       | 5e53831cc317d30017cb894f     |
       | 5e53831cc317d30017cb894f     |

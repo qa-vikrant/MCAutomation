@@ -1,51 +1,52 @@
 package net.mc.tools.models.updateProductApprovalSettings.request;
 
-public class UpdateProductApprovalRequestModel {
+public class UpdateProductApprovalRequestModel
+{
 
-    private boolean approveAll;
+    private Boolean approveAll;
 
-    private boolean approveSelected;
+    private Boolean approveSelected;
 
-    private boolean reviewAll;
+    private Boolean reviewAll;
 
-    private boolean isProductSync;
+    private Boolean isProductSync;
 
-    public boolean getApproveAll ()
+    public Boolean getApproveAll ()
     {
         return approveAll;
     }
 
-    public void setApproveAll (boolean approveAll)
+    public void setApproveAll (Boolean approveAll)
     {
         this.approveAll = approveAll;
     }
 
-    public boolean getApproveSelected ()
+    public Boolean getApproveSelected ()
     {
         return approveSelected;
     }
 
-    public void setApproveSelected (boolean approveSelected)
+    public void setApproveSelected (Boolean approveSelected)
     {
         this.approveSelected = approveSelected;
     }
 
-    public boolean getReviewAll ()
+    public Boolean getReviewAll ()
     {
         return reviewAll;
     }
 
-    public void setReviewAll (boolean reviewAll)
+    public void setReviewAll (Boolean reviewAll)
     {
         this.reviewAll = reviewAll;
     }
 
-    public boolean getIsProductSync ()
+    public Boolean getIsProductSync ()
     {
         return isProductSync;
     }
 
-    public void setIsProductSync (boolean isProductSync)
+    public void setIsProductSync (Boolean isProductSync)
     {
         this.isProductSync = isProductSync;
     }

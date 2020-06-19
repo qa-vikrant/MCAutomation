@@ -11,7 +11,7 @@ Feature: API -  Product - Approve All Changes of a product.  put-  /product/appr
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki432     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter product details for approval
       | seller   | isToPublish     | id     |
       | <seller> | <isToPublish>   | <id>   |
@@ -28,7 +28,7 @@ Feature: API -  Product - Approve All Changes of a product.  put-  /product/appr
     When User is able to log into application
       | email                                  | password         |
       | vikrant.singh+13@successive.tech       | 1234512345Q@     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter product details for approval
       | seller   | isToPublish     | id     |
       | <seller> | <isToPublish>   | <id>   |
@@ -47,7 +47,7 @@ Feature: API -  Product - Approve All Changes of a product.  put-  /product/appr
     When User is able to log into application
       | email                                 | password         |
       | vikrant.singh@successive.tech         | HaiVikki4321     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter product details for approval
       | seller   | isToPublish     | id     |
       | <seller> | <isToPublish>   | <id>   |
@@ -65,7 +65,7 @@ Feature: API -  Product - Approve All Changes of a product.  put-  /product/appr
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki432     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter product details for approval
       | seller   | isToPublish     | id     |
       | <seller> | <isToPublish>   | <id>   |
@@ -80,7 +80,7 @@ Feature: API -  Product - Approve All Changes of a product.  put-  /product/appr
     When User is able to log into application
       | email                                 | password         |
       | vikrant.singh@successive.tech         | HaiVikki4321     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter product details for approval
       | seller   | isToPublish     | id     |
       | <seller> | <isToPublish>   | <id>   |
@@ -97,7 +97,7 @@ Feature: API -  Product - Approve All Changes of a product.  put-  /product/appr
     When User is able to log into application
       | email                                  | password         |
       | vikrant.singh+13@successive.tech       | 1234512345Q@     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter product details for approval
       | seller   | isToPublish     | id     |
       | <seller> | <isToPublish>   | <id>   |
@@ -114,7 +114,7 @@ Feature: API -  Product - Approve All Changes of a product.  put-  /product/appr
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki432     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter product details for approval
       | seller   | id     |
       | <seller> | <id>   |
@@ -131,7 +131,7 @@ Feature: API -  Product - Approve All Changes of a product.  put-  /product/appr
     When User is able to log into application
       | email                                  | password         |
       | vikrant.singh+13@successive.tech       | 1234512345Q@     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter product details for approval
       | seller   | id     |
       | <seller> | <id>   |
@@ -148,7 +148,7 @@ Feature: API -  Product - Approve All Changes of a product.  put-  /product/appr
     When User is able to log into application
       | email                                 | password         |
       | vikrant.singh@successive.tech         | HaiVikki4321     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter product details for approval
       | seller   | id     |
       | <seller> | <id>   |
@@ -166,7 +166,7 @@ Feature: API -  Product - Approve All Changes of a product.  put-  /product/appr
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki432     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And user enter product details for approval
       | seller   | isToPublish     | id     |
       | <seller> | <isToPublish>   | <id>   |

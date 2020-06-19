@@ -1,24 +1,14 @@
 package net.mc.tools.models.manageDiscount.request;
 
-public class AdvancedValues {
-
-    private String productId;
-
+public class AdvancedValues
+{
     private String price;
-
-    private String vendorId;
 
     private String type;
 
-    public String getProductId ()
-    {
-        return productId;
-    }
+    private String category;
 
-    public void setProductId (String productId)
-    {
-        this.productId = productId;
-    }
+    private String value;
 
     public String getPrice ()
     {
@@ -30,16 +20,6 @@ public class AdvancedValues {
         this.price = price;
     }
 
-    public String getVendorId ()
-    {
-        return vendorId;
-    }
-
-    public void setVendorId (String vendorId)
-    {
-        this.vendorId = vendorId;
-    }
-
     public String getType ()
     {
         return type;
@@ -49,4 +29,27 @@ public class AdvancedValues {
     {
         this.type = type;
     }
+
+    public String getCategory ()
+    {
+        return category;
+    }
+
+    public void setCategory (String category)
+    {
+        this.category = category;
+    }
+
+    public String getValue ()
+    {
+        return value;
+    }
+
+    public void setValue (String value)
+    {
+        this.value = value;
+    }
+
+
+
 }

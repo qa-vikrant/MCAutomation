@@ -29,17 +29,17 @@ Feature: Api- (Update profile of Supplier / Seller /SystemAdmin)------ put--  /u
 
 
 
-  Scenario: User login as a System Admin with valid registered details and update the profile of their associated vendor
-    When User is able to log into application
-      | email                         | password   |
-      | systemadmin@marketcube.io     | 123456789 |
-    Then User should be able to login to the system and store token
-    And user enters profile details for update vendor profile
-      | brandName     | firstName   | lastName   | phoneNumber  | email                           | id                          | address             | city       | country     | pinCode     | commision   | commisionType  | logo  | profile |  editedBy  |
-      | Your vendor   | Bigger      | B deal     | 12221212     | vikrant.singh@successive.tech   |  5e2996260da2580011251edb   | delhi1              | delhi2     | India       | 110090      |  12         |                |       | true    |   Seller   |
-    And user make a request to update the profile of their associated Vendor
-    Then user should be able to update the vendor profile successfully
-
+#  Scenario: User login as a System Admin with valid registered details and update the profile of their associated vendor
+#    When User is able to log into application
+#      | email                         | password   |
+#      | systemadmin@marketcube.io     | 123456789 |
+#    Then User should be able to login to the system and store token
+#    And user enters profile details for update vendor profile
+#      | brandName     | firstName   | lastName   | phoneNumber  | email                           | id                          | address             | city       | country     | pinCode     | commision   | commisionType  | logo  | profile |  editedBy  |
+#      | Your vendor   | Bigger      | B deal     | 12221212     | vikrant.singh@successive.tech   |  5e2996260da2580011251edb   | delhi1              | delhi2     | India       | 110090      |  12         |                |       | true    |   Seller   |
+#    And user make a request to update the profile of their associated Vendor
+#    Then user should be able to update the vendor profile successfully
+#
 
 
 

@@ -4,70 +4,84 @@ import com.jayway.restassured.response.Response;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import net.mc.tools.models.login.response.LoginResponseModel;
+import net.mc.tools.helpers.HelperClass;
+import net.mc.tools.models.responseForAllModel.ResponseCommonForAll;
+import net.mc.tools.models.token.TokenMessageRequestModel;
 import net.mc.tools.models.updateTermsSetting.request.PaymentTerms;
 import net.mc.tools.models.updateTermsSetting.request.UpdateTermsSettingForSellerRequestModel;
-import net.mc.tools.models.updateTermsSetting.response.UpdateTermsErrorResponseModel;
-import net.mc.tools.models.updateTermsSetting.response.UpdateTermsSettingsForSellerResponseModel;
 import net.mc.tools.services.UpdateTermsSettingsSellerService;
+import net.mc.tools.utilities.RandomGenerator;
 import org.junit.Assert;
 
 import java.util.List;
 
 import static net.mc.tools.services.RegisterSupplierBySelfService.gson;
 
-public class UpdateTermsSettingsSellerSteps {
+public class UpdateTermsSettingsSellerSteps
+{
 
-    private Response response;
-    private LoginResponseModel loginResponseModel;
-    private UpdateTermsSettingsForSellerResponseModel updateTermsSettingsForSellerResponseModel;
-    private UpdateTermsErrorResponseModel updateTermsErrorResponseModel;
-    private PaymentTerms objPt=new PaymentTerms();
-    private UpdateTermsSettingForSellerRequestModel obj1=new UpdateTermsSettingForSellerRequestModel();
+    private Response jsonResponse;
+    private UpdateTermsSettingForSellerRequestModel updateTermsSettingForSellerRequestModel;
+    private ResponseCommonForAll responseCommonForAll;
+    private PaymentTerms paymentTerms;
 
-    @When("^User make a request to change the terms settings by entering return type and return period$")
-    public void userUpdateTermsSettings(List<UpdateTermsSettingForSellerRequestModel> updateTerms)
+
+    @And("^User enters returns policy details$")
+    public void UserEntersReturnsPolicyDetails(List<UpdateTermsSettingForSellerRequestModel> updateTermsSettingForSellerRequestModelList)
     {
-       obj1.setIsReturn(updateTerms.get(0).getIsReturn());
-       obj1.setReturnPeriod(updateTerms.get(0).getReturnPeriod());
+        this.updateTermsSettingForSellerRequestModel=updateTermsSettingForSellerRequestModelList.get(0);
+        if(updateTermsSettingForSellerRequestModelList.get(0).getReturnPeriod()!=null)
+        {
+            this.updateTermsSettingForSellerRequestModel.setReturnPeriod(HelperClass.RandomNumberGeneratorTwodigit());
+        }
+        else
+        {
+            this.updateTermsSettingForSellerRequestModel.setReturnPeriod(00);
+        }
+    }
+    @And("^User enters Payment terms details$")
+    public void userEnterPaymentTerms(List<PaymentTerms> paymentTermsList)
+    {
+        this.paymentTerms=paymentTermsList.get(0);
+        if(paymentTermsList.get(0).getDays()!=null)
+        {
+            this.paymentTerms.setDays(HelperClass.RandomNumberGeneratorOnedigit());
+        }
+        else
+        {
+            this.paymentTerms.setDays(00);
+        }
+    }
+
+    @When("^User make a request to update the terms settings$")
+    public void UserMakeARequestToChangeTheTermsSettings()
+    {
+        updateTermsSettingForSellerRequestModel.setPaymentTerms(paymentTerms);
+       jsonResponse=UpdateTermsSettingsSellerService.UpdateTermsSettingsSellerRequest(updateTermsSettingForSellerRequestModel,LoginSteps.token);
+    }
+
+
+    @When("^User make a request to update the terms settings with incorrect/blank token field in form of without login credentials$")
+    public void UserMakeARequestToChangeTheTermsSettingsWithInvalidToken(List<TokenMessageRequestModel> tokenMessageRequestModelList)
+    {
+        updateTermsSettingForSellerRequestModel.setPaymentTerms(paymentTerms);
+        jsonResponse=UpdateTermsSettingsSellerService.UpdateTermsSettingsSellerRequest(updateTermsSettingForSellerRequestModel,tokenMessageRequestModelList.get(0).gettoken());
+    }
+
+    @Then("^User should be able to update the terms settings$")
+    public void userShouldBeAbleToChangeTerms()
+    {
+        Assert.assertTrue(jsonResponse.getStatusCode() == 200);
+        responseCommonForAll = gson().fromJson(jsonResponse.body().prettyPrint(), ResponseCommonForAll.class);
+        Assert.assertEquals("ok", responseCommonForAll.getStatus());
+        Assert.assertEquals("true", responseCommonForAll.getData());
 
     }
 
-    @And("^user enters payment terms$")
-    public void userEnterPaymentTerms(List<PaymentTerms> paymentTerms)  {
-        System.out.println(paymentTerms.get(0).getDays()+paymentTerms.get(0).getType());
-        objPt.setDays(paymentTerms.get(0).getDays());
-        objPt.setType(paymentTerms.get(0).getType());
-        obj1.setPaymentTerms(objPt);
-        response = UpdateTermsSettingsSellerService.requestWithToken(obj1,LoginSteps.token);
-
+    @Then("^User should not be able to update the terms settings and user should get validation error message$")
+    public void userShouldNotBeAbleToChangeTerms(List<String> errorMessage)
+    {
+        HelperClass.ErrorValidationPage(jsonResponse,errorMessage);
     }
 
-    @Then("^User is able to successfully change the terms settings for seller$")
-    public void userShouldBeAbleToChangeTerms() {
-        response.body().prettyPrint();
-        Assert.assertTrue(response.getStatusCode() == 200);
-        updateTermsSettingsForSellerResponseModel = gson().fromJson(response.body().prettyPrint(), UpdateTermsSettingsForSellerResponseModel.class);
-        Assert.assertEquals("ok", updateTermsSettingsForSellerResponseModel.getStatus());
-        Assert.assertEquals("true", updateTermsSettingsForSellerResponseModel.getData());
-
-    }
-
-    @Then("^User is not able to change the terms and get validation error message for type$")
-    public void userShouldNotBeAbleToChangeTerms() {
-        Assert.assertTrue(response.getStatusCode() == 422);
-        updateTermsErrorResponseModel = gson().fromJson(response.body().prettyPrint(), UpdateTermsErrorResponseModel.class);
-        Assert.assertEquals("error", updateTermsErrorResponseModel.getStatus());
-        Assert.assertTrue(updateTermsErrorResponseModel.getData() == null);
-        Assert.assertEquals("Payment terms are required", updateTermsErrorResponseModel.getError());
-    }
-
-    @Then("^User is not able to change the terms and get validation error message for returnPeriod")
-    public void userShouldNotBeAbleToChangeTermsWithoutReturnPeriod() {
-        Assert.assertTrue(response.getStatusCode() == 422);
-        updateTermsErrorResponseModel = gson().fromJson(response.body().prettyPrint(), UpdateTermsErrorResponseModel.class);
-        Assert.assertEquals("error", updateTermsErrorResponseModel.getStatus());
-        Assert.assertTrue(updateTermsErrorResponseModel.getData() == null);
-        Assert.assertEquals("Days can't be less than 0", updateTermsErrorResponseModel.getError());
-    }
 }

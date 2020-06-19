@@ -7,7 +7,7 @@ Feature:  API -Order - Update order.-  put -  /order
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh+60@successive.tech      | 123456789       |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters order details for update order
       | sellerId     | shopifyOrderId     |  id     |
       | <sellerId>   | <shopifyOrderId>   |  <id>   |
@@ -28,7 +28,7 @@ Feature:  API -Order - Update order.-  put -  /order
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh+61@successive.tech      | 1234567890      |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters order details for update order
       | sellerId     | shopifyOrderId     |  id     |
       | <sellerId>   | <shopifyOrderId>   |  <id>   |
@@ -49,7 +49,7 @@ Feature:  API -Order - Update order.-  put -  /order
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh+60@successive.tech      | 123456789       |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters order details for update order
       | sellerId     | shopifyOrderId     |  id     |
       | <sellerId>   | <shopifyOrderId>   |  <id>   |
@@ -101,7 +101,7 @@ Feature:  API -Order - Update order.-  put -  /order
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh+61@successive.tech      | 1234567890      |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters order details for update order
       | sellerId     | shopifyOrderId     |  id     |
       | <sellerId>   | <shopifyOrderId>   |  <id>   |
@@ -172,7 +172,7 @@ Feature:  API -Order - Update order.-  put -  /order
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki432     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters order details for update order
       | sellerId     | shopifyOrderId     |  id     |
       | <sellerId>   | <shopifyOrderId>   |  <id>   |
@@ -191,7 +191,7 @@ Feature:  API -Order - Update order.-  put -  /order
     When User is able to log into application
       | email                                 | password        |
       | vikrant.singh@successive.tech         | HaiVikki4321    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters order details for update order
       | sellerId     | shopifyOrderId     |  id     |
       | <sellerId>   | <shopifyOrderId>   |  <id>   |

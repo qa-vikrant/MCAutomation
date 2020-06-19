@@ -2,16 +2,16 @@ package net.mc.tools.models.updateTermsSetting.request;
 
 public class PaymentTerms {
 
-    private String days;
+    private Integer days;
 
     private String type;
 
-    public String getDays ()
+    public Integer getDays ()
     {
         return days;
     }
 
-    public void setDays (String days)
+    public void setDays (Integer days)
     {
         this.days = days;
     }

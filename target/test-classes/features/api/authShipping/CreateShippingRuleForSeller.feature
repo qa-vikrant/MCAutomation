@@ -8,7 +8,7 @@ Feature:  Auth - Create shipping rule for seller -  post -  /user/shipping-rule
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details
       |   UK             |
     And User enters product details
@@ -30,7 +30,7 @@ Feature:  Auth - Create shipping rule for seller -  post -  /user/shipping-rule
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details
       |   UK             |
     And User enters product details
@@ -52,7 +52,7 @@ Feature:  Auth - Create shipping rule for seller -  post -  /user/shipping-rule
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details
       |   UK             |
     And User enters product details
@@ -91,7 +91,7 @@ Feature:  Auth - Create shipping rule for seller -  post -  /user/shipping-rule
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details
       |   UK             |
     And User enters product details
@@ -114,56 +114,56 @@ Feature:  Auth - Create shipping rule for seller -  post -  /user/shipping-rule
 
 
 
-  Scenario Outline: Login with valid registered user details as a System Admin and user wants to create shipping rules based on the destination
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    And User enters destination details
-      |   UK             |
-    And User enters product details
-      |  12DFF344DFFFF   |
-    And User enters the shippingBandID details,Price details,shipping rule condition and description of shipping rule
-      | condition   | description   |shippingBandId    | isShippingDisabled   |   priceType      | price    |
-      | <condition> | <description> |<shippingBandId>  | <isShippingDisabled> |   <priceType>    | <price>  |
-    And User make a request to create new shipping rules based on the destination
-    Then User should not be able to create new shipping rule and user should gets validation error message
-      | User is not authorized to perform this action               |
-      | User is not authorized to perform this action               |
-      | User is not authorized to perform this action               |
-      | User is not authorized to perform this action               |
-    Examples:
-      | shippingBandId              | price  | description           | condition      | priceType   | isShippingDisabled |
-      |  5e688f88e2891c001afed6f9   | 0      | Hit by rest assured3  | destination    | free        | false              |
-      |  5e688f88e2891c001afed6f9   | 23     | Hit by rest assured3  | destination    | fixed       | false              |
-      |  5e688f88e2891c001afed6f9   | 0      | Hit by rest assured3  | destination    | free        | true               |
-      |  5e688f88e2891c001afed6f9   | 23     | Hit by rest assured3  | destination    | fixed       | true               |
+#  Scenario Outline: Login with valid registered user details as a System Admin and user wants to create shipping rules based on the destination
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    And User enters destination details
+#      |   UK             |
+#    And User enters product details
+#      |  12DFF344DFFFF   |
+#    And User enters the shippingBandID details,Price details,shipping rule condition and description of shipping rule
+#      | condition   | description   |shippingBandId    | isShippingDisabled   |   priceType      | price    |
+#      | <condition> | <description> |<shippingBandId>  | <isShippingDisabled> |   <priceType>    | <price>  |
+#    And User make a request to create new shipping rules based on the destination
+#    Then User should not be able to create new shipping rule and user should gets validation error message
+#      | User is not authorized to perform this action               |
+#      | User is not authorized to perform this action               |
+#      | User is not authorized to perform this action               |
+#      | User is not authorized to perform this action               |
+#    Examples:
+#      | shippingBandId              | price  | description           | condition      | priceType   | isShippingDisabled |
+#      |  5e688f88e2891c001afed6f9   | 0      | Hit by rest assured3  | destination    | free        | false              |
+#      |  5e688f88e2891c001afed6f9   | 23     | Hit by rest assured3  | destination    | fixed       | false              |
+#      |  5e688f88e2891c001afed6f9   | 0      | Hit by rest assured3  | destination    | free        | true               |
+#      |  5e688f88e2891c001afed6f9   | 23     | Hit by rest assured3  | destination    | fixed       | true               |
 
 
-  Scenario Outline: Login with valid registered user details as a System Admin and user wants to create shipping rules based on the products
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    And User enters destination details
-      |   UK             |
-    And User enters product details
-      |  12DFF344DFFFF1   |
-    And User enters the shippingBandID details,Price details,shipping rule condition and description of shipping rule
-      | condition   | description   |shippingBandId    | isShippingDisabled   |   priceType      | price    |
-      | <condition> | <description> |<shippingBandId>  | <isShippingDisabled> |   <priceType>    | <price>  |
-    And User make a request to create new shipping rules based on the products
-    Then User should not be able to create new shipping rule and user should gets validation error message
-      | User is not authorized to perform this action               |
-      | User is not authorized to perform this action               |
-      | User is not authorized to perform this action               |
-      | User is not authorized to perform this action               |
-    Examples:
-      | shippingBandId              | price  | description           | condition       | priceType   | isShippingDisabled |
-      |  5e688f88e2891c001afed6f9   | 0      | Hit by rest assured3  | product         | free        | false              |
-      |  5e688f88e2891c001afed6f9   | 23     | Hit by rest assured3  | product         | fixed       | false              |
-      |  5e688f88e2891c001afed6f9   | 0      | Hit by rest assured3  | product         | free        | true               |
-      |  5e688f88e2891c001afed6f9   | 23     | Hit by rest assured3  | product         | fixed       | true               |
+#  Scenario Outline: Login with valid registered user details as a System Admin and user wants to create shipping rules based on the products
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    And User enters destination details
+#      |   UK             |
+#    And User enters product details
+#      |  12DFF344DFFFF1   |
+#    And User enters the shippingBandID details,Price details,shipping rule condition and description of shipping rule
+#      | condition   | description   |shippingBandId    | isShippingDisabled   |   priceType      | price    |
+#      | <condition> | <description> |<shippingBandId>  | <isShippingDisabled> |   <priceType>    | <price>  |
+#    And User make a request to create new shipping rules based on the products
+#    Then User should not be able to create new shipping rule and user should gets validation error message
+#      | User is not authorized to perform this action               |
+#      | User is not authorized to perform this action               |
+#      | User is not authorized to perform this action               |
+#      | User is not authorized to perform this action               |
+#    Examples:
+#      | shippingBandId              | price  | description           | condition       | priceType   | isShippingDisabled |
+#      |  5e688f88e2891c001afed6f9   | 0      | Hit by rest assured3  | product         | free        | false              |
+#      |  5e688f88e2891c001afed6f9   | 23     | Hit by rest assured3  | product         | fixed       | false              |
+#      |  5e688f88e2891c001afed6f9   | 0      | Hit by rest assured3  | product         | free        | true               |
+#      |  5e688f88e2891c001afed6f9   | 23     | Hit by rest assured3  | product         | fixed       | true               |
 
 
 
@@ -172,7 +172,7 @@ Feature:  Auth - Create shipping rule for seller -  post -  /user/shipping-rule
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details
       |   UK             |
     And User enters product details
@@ -194,7 +194,7 @@ Feature:  Auth - Create shipping rule for seller -  post -  /user/shipping-rule
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details
       |   UK             |
     And User enters product details
@@ -216,7 +216,7 @@ Feature:  Auth - Create shipping rule for seller -  post -  /user/shipping-rule
     When User is able to log into application
       | email                                    | password       |
       | vikrant.singh+60@successive.tech         | 123456789      |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     And User enters destination details
       |   UK             |
     And User enters product details

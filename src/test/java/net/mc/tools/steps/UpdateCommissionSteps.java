@@ -3,9 +3,10 @@ package net.mc.tools.steps;
 import com.jayway.restassured.response.Response;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.mc.tools.helpers.HelperClass;
 import net.mc.tools.models.commission.request.CommissionRequestModel;
-import net.mc.tools.models.commission.response.CommissionErrorResponseModel;
-import net.mc.tools.models.commission.response.CommissionResponseModel;
+import net.mc.tools.models.responseForAllModel.ResponseCommonForAll;
+import net.mc.tools.models.token.TokenMessageRequestModel;
 import net.mc.tools.services.CommissionService;
 import org.junit.Assert;
 
@@ -15,42 +16,47 @@ import static net.mc.tools.services.RegisterSupplierBySelfService.gson;
 
 public class UpdateCommissionSteps
 {
-     private Response json_Response;
-     private CommissionResponseModel commissionResponseModel;
-     private CommissionErrorResponseModel commissionErrorResponseModel;
+     private Response jsonResponse;
+     private CommissionRequestModel commissionRequestModel;
+     private ResponseCommonForAll responseCommonForAll;
 
-    @When("^User make a request to change the commission of given user$")
-    public void userMakeCommissionChangeRequest(List<CommissionRequestModel> commissionRequestModel)
+    @When("^User enters the commision details$")
+    public void UserEntersTheCommisionDetails(List<CommissionRequestModel> commissionRequestModelList)
     {
-        json_Response = CommissionService.requestWithToken(commissionRequestModel,LoginSteps.token);
+       this.commissionRequestModel=commissionRequestModelList.get(0);
     }
 
-    @Then("^User is able to successfully change the commission for the given user$")
-    public void userShouldBeAbleToChangeCommission()  {
-        Assert.assertTrue(json_Response.getStatusCode() == 200);
-        commissionResponseModel = gson().fromJson(json_Response.body().prettyPrint(), CommissionResponseModel.class);
-        Assert.assertEquals("ok" , commissionResponseModel.getStatus());
-        Assert.assertEquals("true", commissionResponseModel.getData());
+    @When("^User make a request to update the commission$")
+    public void userMakeCommissionChangeRequest()
+    {
+        jsonResponse = CommissionService.commissionChangeRequest(commissionRequestModel,LoginSteps.token);
+    }
+
+    @When("^User make a request to update the commission with incorrect/blank token field in form of without login credentials$")
+    public void userMakeCommissionChangeRequestWithInvalidToken(List<TokenMessageRequestModel> tokenMessageRequestModelList)
+    {
+        jsonResponse = CommissionService.commissionChangeRequest(commissionRequestModel,tokenMessageRequestModelList.get(0).gettoken());
+    }
+
+    @Then("^User should be able to update the commission$")
+    public void userShouldBeAbleToChangeCommission()
+    {
+        Assert.assertTrue(jsonResponse.getStatusCode() == 200);
+        responseCommonForAll = gson().fromJson(jsonResponse.body().prettyPrint(), ResponseCommonForAll.class);
+        Assert.assertEquals("ok" , responseCommonForAll.getStatus());
+        Assert.assertEquals("true", responseCommonForAll.getData());
+        jsonResponse=null;
+        responseCommonForAll=null;
+        commissionRequestModel=null;
 
     }
 
-    @Then("^User is not able to successfully change the commission for the given user without commission$")
-    public void userShouldNotBeAbleToChangeWithoutCommission()  {
-        Assert.assertTrue(json_Response.getStatusCode() == 422);
-        commissionErrorResponseModel = gson().fromJson(json_Response.body().prettyPrint(), CommissionErrorResponseModel.class);
-        Assert.assertEquals("error" , commissionErrorResponseModel.getStatus());
-        Assert.assertEquals("Commission is required.", commissionErrorResponseModel.getError());
-        Assert.assertTrue(commissionErrorResponseModel.getData() == null);
+    @Then("^User should not be able to update the commission and user should get validation error message$")
+    public void userShouldNotBeAbleToChangeWithoutCommission(List<String> errorMessage)
+    {
+        HelperClass.ErrorValidationPage(jsonResponse,errorMessage);
     }
 
-    @Then("^User is not able to successfully change the commission for the given user without commission type$")
-    public void userShouldNotBeAbleToChangeWithoutCommissionType()  {
-        Assert.assertTrue(json_Response.getStatusCode() == 422);
-        commissionErrorResponseModel = gson().fromJson(json_Response.body().prettyPrint(), CommissionErrorResponseModel.class);
-        Assert.assertEquals("error" , commissionErrorResponseModel.getStatus());
-        Assert.assertEquals("CommissionType is required.", commissionErrorResponseModel.getError());
-        Assert.assertTrue(commissionErrorResponseModel.getData() == null);
-    }
 
 
 }

@@ -8,7 +8,7 @@ Feature: API - Register supplier as a user
     When User is able to log into application
       | email                             | password    |
       | vikrant.singh@successive.tech     | HaiVikki12  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters email ids
       | vikrant.singh@successive.tech |
       | vikrant.singh@successive.tech |
@@ -33,7 +33,7 @@ Feature: API - Register supplier as a user
     When User is able to log into application
       | email                             | password    |
       | vikrant.singh@successive.tech     | HaiVikki12  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters email ids
       | vikrant.singh@successive.tech |
       | vikrant.singh@successive.tech |
@@ -90,7 +90,7 @@ Feature: API - Register supplier as a user
     When User is able to log into application
       | email                             | password    |
       | vikrant.singh@successive.tech     | 1234567890  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters email ids
       | vikrant.singh@successive.tech |
       | vikrant.singh@successive.tech |
@@ -109,35 +109,35 @@ Feature: API - Register supplier as a user
 #Bug-Login as a vendor and when user request to send bulk invite to vendor by data ,it should be expected message as a "User is not authorized to perform this action." and but it gives a response true and status ok
 
 
-  Scenario Outline: Login with valid registered user details as a System admin and user send bulk invite to vendor by data
-    When User is able to log into application
-      | email                             | password    |
-      | systemadmin@marketcube.io         | 123456789   |
-    Then user should be able to login to the system and store token
-    When user enters email ids
-      | vikrant.singh@successive.tech |
-      | vikrant.singh@successive.tech |
-    And  user enters details of Message
-      | message            | subject |
-      | <message>          | <subject> |
-    And user enter details of messageData for list
-      | storeName   | url                     |
-      | <storeName> | <url>                   |
-    And user enter details of sentBy
-      | type          | userid   |
-      | <type>        | <userid> |
-    And user make a request to send bulk invite to vendor by data
-    Then invite should be sent
-    Examples:
-      | message          | subject  | storeName       | url                    | type           | userid     |
-      | This is message  | sub      | testing         | http://www.google.com  | testinguser    | userID     |
+#  Scenario Outline: Login with valid registered user details as a System admin and user send bulk invite to vendor by data
+#    When User is able to log into application
+#      | email                             | password    |
+#      | systemadmin@marketcube.io         | 123456789   |
+#    Then User should be able to login to the system and store token
+#    When user enters email ids
+#      | vikrant.singh@successive.tech |
+#      | vikrant.singh@successive.tech |
+#    And  user enters details of Message
+#      | message            | subject |
+#      | <message>          | <subject> |
+#    And user enter details of messageData for list
+#      | storeName   | url                     |
+#      | <storeName> | <url>                   |
+#    And user enter details of sentBy
+#      | type          | userid   |
+#      | <type>        | <userid> |
+#    And user make a request to send bulk invite to vendor by data
+#    Then invite should be sent
+#    Examples:
+#      | message          | subject  | storeName       | url                    | type           | userid     |
+#      | This is message  | sub      | testing         | http://www.google.com  | testinguser    | userID     |
 
 
   Scenario: Login with valid registered user details as a seller and user request to send bulk invite to vendor by data with blank email field
     When User is able to log into application
       | email                             | password    |
       | vikrant.singh@successive.tech     | HaiVikki12  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters email ids
       |     |
     And  user enters details of Message
@@ -158,7 +158,7 @@ Feature: API - Register supplier as a user
     When User is able to log into application
       | email                             | password    |
       | vikrant.singh@successive.tech     | HaiVikki12  |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When user enters email ids
       | abc    |
     And  user enters details of Message

@@ -1,12 +1,14 @@
 package net.mc.tools.models.updateMarkupOfProduct.request;
 
-public class AdvancedValues {
-
+public class AdvancedValues
+{
     private String price;
 
     private String type;
 
     private String category;
+
+    private String value;
 
     public String getPrice ()
     {
@@ -37,4 +39,15 @@ public class AdvancedValues {
     {
         this.category = category;
     }
+
+    public String getValue ()
+    {
+        return value;
+    }
+
+    public void setValue (String value)
+    {
+        this.value = value;
+    }
+
 }

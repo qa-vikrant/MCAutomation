@@ -39,4 +39,6 @@ public class UpdateBrandingOfSellerSteps {
         Assert.assertEquals("ok" , updateBrandingOfSellerResponseModel.getStatus());
         Assert.assertEquals("true", updateBrandingOfSellerResponseModel.getData());
     }
+
+
 }

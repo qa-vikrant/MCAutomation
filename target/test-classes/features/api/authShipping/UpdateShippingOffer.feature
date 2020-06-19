@@ -7,7 +7,7 @@ Feature: API-  Auth - Update shipping offer for seller/Vendor-  put - /user/ship
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shipping offer details
       | _id     | userId   |  description    | priceType   | price   | isCumulative   |
       | <_id>   | <userId> |  <description>  | <priceType> | <price> | <isCumulative> |
@@ -23,7 +23,7 @@ Feature: API-  Auth - Update shipping offer for seller/Vendor-  put - /user/ship
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shipping offer details
       | _id     | userId   |  description    | priceType   | price   | isCumulative   |
       | <_id>   | <userId> |  <description>  | <priceType> | <price> | <isCumulative> |
@@ -35,28 +35,28 @@ Feature: API-  Auth - Update shipping offer for seller/Vendor-  put - /user/ship
 
 
 
-  Scenario Outline: Login with valid registered user details as a System Admin and user wants to update shipping offer of other seller
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When User enters shipping offer details
-      | _id     | userId   |  description    | priceType   | price   | isCumulative   |
-      | <_id>   | <userId> |  <description>  | <priceType> | <price> | <isCumulative> |
-    Then User make a request to update shipping offer
-    Then User should not be able to update shipping offer for seller and user should get validation error message
-      | User is not authorized to perform this action               |
-    Examples:
-      | _id                       | userId                     |  description                                         | priceType   | price   | isCumulative   |
-      | 5e86ff3d84ca54001330ed7c  | 5e29912fbfec74a0272e9a92   |  Api Hit by SystemAdmin for update shipping offer    | fixed       | 222     | false          |
-
+#  Scenario Outline: Login with valid registered user details as a System Admin and user wants to update shipping offer of other seller
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When User enters shipping offer details
+#      | _id     | userId   |  description    | priceType   | price   | isCumulative   |
+#      | <_id>   | <userId> |  <description>  | <priceType> | <price> | <isCumulative> |
+#    Then User make a request to update shipping offer
+#    Then User should not be able to update shipping offer for seller and user should get validation error message
+#      | User is not authorized to perform this action               |
+#    Examples:
+#      | _id                       | userId                     |  description                                         | priceType   | price   | isCumulative   |
+#      | 5e86ff3d84ca54001330ed7c  | 5e29912fbfec74a0272e9a92   |  Api Hit by SystemAdmin for update shipping offer    | fixed       | 222     | false          |
+#
 
 
   Scenario Outline: Login with valid registered user details as a seller and without follow field validation user wants to update their own shipping offer
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shipping offer details
       | _id     | userId   |  description    | priceType   | price   | isCumulative   |
       | <_id>   | <userId> |  <description>  | <priceType> | <price> | <isCumulative> |

@@ -3,6 +3,7 @@ package net.mc.tools.helpers;
 import com.jayway.restassured.response.Response;
 import net.mc.tools.models.responseForAllModel.ErrorResponseCommonForAll;
 import net.mc.tools.services.RegisterSupplierBySelfService;
+import net.mc.tools.utilities.RandomGenerator;
 import org.junit.Assert;
 
 import java.text.DateFormatSymbols;
@@ -13,7 +14,7 @@ import java.util.List;
 public class HelperClass
 {
     private static ErrorResponseCommonForAll errorResponseCommonForAll;
-    private static int i=0;
+    private static int i=0,randomNumber=0;
     private static Calendar calendar;
     private static Date timestamp;
     private int AM_PM;
@@ -108,6 +109,25 @@ public class HelperClass
         }
         return AM_To_PM;
     }
+
+    public static Integer RandomNumberGeneratorOnedigit()
+    {
+        while (randomNumber==0)
+        {
+          randomNumber=Integer.parseInt(RandomGenerator.randomInteger(1));
+        }
+        return randomNumber;
+    }
+    public static Integer RandomNumberGeneratorTwodigit()
+    {
+        while (randomNumber==0)
+        {
+            randomNumber=Integer.parseInt(RandomGenerator.randomInteger(2));
+        }
+        return randomNumber;
+    }
+
+
 
 
 

@@ -1,6 +1,7 @@
 package net.mc.tools.models.manageDiscount.request;
 
-public class ManageDiscountRequestModel {
+public class ManageDiscountRequestModel
+{
 
     private AdvancedValues[] advancedValues;
 
@@ -61,4 +62,5 @@ public class ManageDiscountRequestModel {
     {
         this.userId = userId;
     }
+
 }

@@ -11,7 +11,7 @@
       When User is able to log into application
         | email                                 | password       |
         | vikrant.singh@successive.tech         | HaiVikki12     |
-      Then user should be able to login to the system and store token
+      Then User should be able to login to the system and store token
       And User enters destination details for shipping offer
         |   UK             |
       And User enters product details for shipping offer
@@ -43,7 +43,7 @@
       When User is able to log into application
         | email                                 | password       |
         | vikrant.singh@successive.tech         | HaiVikki12     |
-      Then user should be able to login to the system and store token
+      Then User should be able to login to the system and store token
       And User enters destination details for shipping offer
         |   UK             |
       And User enters product details for shipping offer
@@ -72,7 +72,7 @@
       When User is able to log into application
         | email                                 | password       |
         | vikrant.singh@successive.tech         | HaiVikki12     |
-      Then user should be able to login to the system and store token
+      Then User should be able to login to the system and store token
       And User enters destination details for shipping offer
         |   UK             |
       And User enters product details for shipping offer
@@ -126,7 +126,7 @@
       When User is able to log into application
         | email                                 | password       |
         | vikrant.singh@successive.tech         | 1234567890     |
-      Then user should be able to login to the system and store token
+      Then User should be able to login to the system and store token
       And User enters destination details for shipping offer
         |   UK             |
       And User enters product details for shipping offer
@@ -155,7 +155,7 @@
       When User is able to log into application
         | email                                 | password       |
         | vikrant.singh@successive.tech         | 1234567890     |
-      Then user should be able to login to the system and store token
+      Then User should be able to login to the system and store token
       And User enters destination details for shipping offer
         |   UK             |
       And User enters product details for shipping offer
@@ -180,75 +180,75 @@
 
 
 
-    Scenario Outline: Login with valid registered user details as  a System Admin and user wants to create shipping offer for seller based on products
-      When User is able to log into application
-        | email                                 | password       |
-        | systemadmin@marketcube.io             | 12345678n@N    |
-      Then user should be able to login to the system and store token
-      And User enters destination details for shipping offer
-        |   UK             |
-      And User enters product details for shipping offer
-        |  5e58bd1672d6c500170cd903 |
-      And User enters the shippingBandID details,Price details,shipping offer condition and description of shipping offer
-        | description   |shippingBandId    | isCumulative   |   priceType      | price    |  condition   |
-        | <description> |<shippingBandId>  | <isCumulative> |   <priceType>    | <price>  |  <condition> |
-      And User enters the condition criteria and condition value
-        | value    | criteria   |
-        | <value>  | <criteria> |
-      And user make a request to create a shipping offer based on products
-      Then User should not be able to create offer and user should gets validation error message
-        | User is not authorized to perform this action |
-        | User is not authorized to perform this action |
-        | User is not authorized to perform this action |
-        | User is not authorized to perform this action |
-        | User is not authorized to perform this action |
-        | User is not authorized to perform this action |
-        | User is not authorized to perform this action |
-      Examples:
-        | description                                      | shippingBandId             | isCumulative   | priceType      | price    |  condition         | value    | criteria     |
-        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | fixed          |  20      |                    |          |              |
-        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productPrice       |  200     | greaterThan  |
-        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productPrice       |  200     | lessThan     |
-        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productQuantity    |  200     | greaterThan  |
-        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productQuantity    |  200     | lessThan     |
-        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | free           |  0       | orderValue         |  200     | greaterThan  |
-        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | free           |  0       | orderValue         |  200     | lessThan     |
+#    Scenario Outline: Login with valid registered user details as  a System Admin and user wants to create shipping offer for seller based on products
+#      When User is able to log into application
+#        | email                                 | password       |
+#        | systemadmin@marketcube.io             | 12345678n@N    |
+#      Then User should be able to login to the system and store token
+#      And User enters destination details for shipping offer
+#        |   UK             |
+#      And User enters product details for shipping offer
+#        |  5e58bd1672d6c500170cd903 |
+#      And User enters the shippingBandID details,Price details,shipping offer condition and description of shipping offer
+#        | description   |shippingBandId    | isCumulative   |   priceType      | price    |  condition   |
+#        | <description> |<shippingBandId>  | <isCumulative> |   <priceType>    | <price>  |  <condition> |
+#      And User enters the condition criteria and condition value
+#        | value    | criteria   |
+#        | <value>  | <criteria> |
+#      And user make a request to create a shipping offer based on products
+#      Then User should not be able to create offer and user should gets validation error message
+#        | User is not authorized to perform this action |
+#        | User is not authorized to perform this action |
+#        | User is not authorized to perform this action |
+#        | User is not authorized to perform this action |
+#        | User is not authorized to perform this action |
+#        | User is not authorized to perform this action |
+#        | User is not authorized to perform this action |
+#      Examples:
+#        | description                                      | shippingBandId             | isCumulative   | priceType      | price    |  condition         | value    | criteria     |
+#        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | fixed          |  20      |                    |          |              |
+#        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productPrice       |  200     | greaterThan  |
+#        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productPrice       |  200     | lessThan     |
+#        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productQuantity    |  200     | greaterThan  |
+#        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productQuantity    |  200     | lessThan     |
+#        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | free           |  0       | orderValue         |  200     | greaterThan  |
+#        | hit by RestAssured on products by seller         | 5e82ea96869d7c0013af0636   | false          | free           |  0       | orderValue         |  200     | lessThan     |
+#
 
 
-
-    Scenario Outline: Login with valid registered user details as  a System Admin and user wants to create shipping offer for seller based on destination
-      When User is able to log into application
-        | email                                 | password       |
-        | systemadmin@marketcube.io             | 12345678n@N    |
-      Then user should be able to login to the system and store token
-      And User enters destination details for shipping offer
-        |   UK             |
-      And User enters product details for shipping offer
-        |  5e58bd1672d6c500170cd903 |
-      And User enters the shippingBandID details,Price details,shipping offer condition and description of shipping offer
-        | description   |shippingBandId    | isCumulative   |   priceType      | price    |  condition   |
-        | <description> |<shippingBandId>  | <isCumulative> |   <priceType>    | <price>  |  <condition> |
-      And User enters the condition criteria and condition value
-        | value    | criteria   |
-        | <value>  | <criteria> |
-      And user make a request to create a shipping offer based on destination
-      Then User should not be able to create offer and user should gets validation error message
-        | User is not authorized to perform this action |
-        | User is not authorized to perform this action |
-        | User is not authorized to perform this action |
-        | User is not authorized to perform this action |
-        | User is not authorized to perform this action |
-        | User is not authorized to perform this action |
-        | User is not authorized to perform this action |
-      Examples:
-        | description                                      | shippingBandId             | isCumulative   | priceType      | price    |  condition         | value    | criteria     |
-        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | fixed          |  20      |                    |          |              |
-        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productPrice       |  200     | greaterThan  |
-        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productPrice       |  200     | lessThan     |
-        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | fixed          |  20      | productQuantity    |  200     | greaterThan  |
-        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productQuantity    |  200     | lessThan     |
-        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | fixed          |  20      | orderValue         |  200     | greaterThan  |
-        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | free           |  0       | orderValue         |  200     | lessThan     |
+#    Scenario Outline: Login with valid registered user details as  a System Admin and user wants to create shipping offer for seller based on destination
+#      When User is able to log into application
+#        | email                                 | password       |
+#        | systemadmin@marketcube.io             | 12345678n@N    |
+#      Then User should be able to login to the system and store token
+#      And User enters destination details for shipping offer
+#        |   UK             |
+#      And User enters product details for shipping offer
+#        |  5e58bd1672d6c500170cd903 |
+#      And User enters the shippingBandID details,Price details,shipping offer condition and description of shipping offer
+#        | description   |shippingBandId    | isCumulative   |   priceType      | price    |  condition   |
+#        | <description> |<shippingBandId>  | <isCumulative> |   <priceType>    | <price>  |  <condition> |
+#      And User enters the condition criteria and condition value
+#        | value    | criteria   |
+#        | <value>  | <criteria> |
+#      And user make a request to create a shipping offer based on destination
+#      Then User should not be able to create offer and user should gets validation error message
+#        | User is not authorized to perform this action |
+#        | User is not authorized to perform this action |
+#        | User is not authorized to perform this action |
+#        | User is not authorized to perform this action |
+#        | User is not authorized to perform this action |
+#        | User is not authorized to perform this action |
+#        | User is not authorized to perform this action |
+#      Examples:
+#        | description                                      | shippingBandId             | isCumulative   | priceType      | price    |  condition         | value    | criteria     |
+#        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | fixed          |  20      |                    |          |              |
+#        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productPrice       |  200     | greaterThan  |
+#        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productPrice       |  200     | lessThan     |
+#        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | fixed          |  20      | productQuantity    |  200     | greaterThan  |
+#        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | free           |  0       | productQuantity    |  200     | lessThan     |
+#        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | fixed          |  20      | orderValue         |  200     | greaterThan  |
+#        | hit by RestAssured on destination  by vendor     | 5e82ea96869d7c0013af0636   | false          | free           |  0       | orderValue         |  200     | lessThan     |
 
 
 

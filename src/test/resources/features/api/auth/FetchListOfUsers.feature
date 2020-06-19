@@ -207,6 +207,8 @@ Feature:
 #    And user make a request to fetch list of seller
 #    Then user should be able to gets all list of seller that he requested
 #
+
+
 #
 #  Scenario Outline:Login with valid registered user details as a system admin and user request for list of seller without follow Userid field and Usertype field validation
 #    When User is able to log into application
@@ -232,6 +234,10 @@ Feature:
 #      |                               |                    |
 ## bug --login with system admin and user request for list of seller ,when we enter invalid user id then it should be expected message as a --"Invalid userId provided." ,But it is giving wrong messages as a "Cast to ObjectId failed for value \"59c134d3c8efb4001a2bf1adww\" at path \"_id\" for model \"Users\"
 #
+
+
+
+
 #
 #  Scenario:Login with valid registered user details as a system admin and user gets the list of vendor
 #    When User is able to log into application
@@ -244,6 +250,9 @@ Feature:
 #    And user make a request to fetch list of vendor
 #    Then user should be able to gets all list of vendor that he requested
 #
+
+
+
 #
 #  Scenario Outline:Login with valid registered user details as a system admin and user request for list of vendor without follow Userid field and Usertype field validation
 #    When User is able to log into application

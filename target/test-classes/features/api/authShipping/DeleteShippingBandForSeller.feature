@@ -7,7 +7,7 @@ Feature: API--  Auth - Delete shipping band for seller -- delete --  /user/shipp
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shippingBandId
       | shippingBandId            |
       | 5e68b22982cded0019f626e6  |
@@ -20,7 +20,7 @@ Feature: API--  Auth - Delete shipping band for seller -- delete --  /user/shipp
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shippingBandId
       | shippingBandId            |
       | 5e68b22982cded0019f626e6  |
@@ -29,24 +29,24 @@ Feature: API--  Auth - Delete shipping band for seller -- delete --  /user/shipp
       |  User is not authorized to perform this action |
 
 
-  Scenario: Login with valid registered user details as a System Admin and user wants to delete the shipping band of seller
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When User enters shippingBandId
-      | shippingBandId            |
-      | 5e68b22982cded0019f626e6  |
-    And user make request to delete shipping band
-    Then User should not be able to delete shipping band of seller and user should get a validation message
-      |  User is not authorized to perform this action |
+#  Scenario: Login with valid registered user details as a System Admin and user wants to delete the shipping band of seller
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When User enters shippingBandId
+#      | shippingBandId            |
+#      | 5e68b22982cded0019f626e6  |
+#    And user make request to delete shipping band
+#    Then User should not be able to delete shipping band of seller and user should get a validation message
+#      |  User is not authorized to perform this action |
 
 
   Scenario Outline: Login with valid registered user details as a seller and without follow field validation user wants to delete shipping band for seller
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shippingBandId
       | shippingBandId      |
       | <shippingBandId>    |

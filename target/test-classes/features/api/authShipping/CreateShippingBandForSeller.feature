@@ -7,7 +7,7 @@ Feature: Auth - Create shipping band for seller -  post -  /user/shipping-band
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enter details for create shipping band for seller
       | name   | description   | priceType   | price   | isUpdateAllowed   |
       | <name> | <description> | <priceType> | <price> | <isUpdateAllowed> |
@@ -24,7 +24,7 @@ Feature: Auth - Create shipping band for seller -  post -  /user/shipping-band
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enter details for create shipping band for seller with already existed shipping band name
       | name   | description   | priceType   | price   | isUpdateAllowed   |
       | <name> | <description> | <priceType> | <price> | <isUpdateAllowed> |
@@ -46,7 +46,7 @@ Feature: Auth - Create shipping band for seller -  post -  /user/shipping-band
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enter details for create shipping band for seller
       | name    | description    | priceType   | price   | isUpdateAllowed   |
       | <name>  | <description>  | <priceType> | <price> | <isUpdateAllowed> |
@@ -75,7 +75,7 @@ Feature: Auth - Create shipping band for seller -  post -  /user/shipping-band
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | 1234567890     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enter details for create shipping band for seller
       | name   | description   | priceType   | price   | isUpdateAllowed   |
       | <name> | <description> | <priceType> | <price> | <isUpdateAllowed> |
@@ -87,19 +87,19 @@ Feature: Auth - Create shipping band for seller -  post -  /user/shipping-band
 
 
 
-  Scenario Outline: Login with valid registered user details as a System Admin and user use their token to create shipping band for seller
-    When User is able to log into application
-      | email                                 | password       |
-      | systemadmin@marketcube.io             | 12345678n@N    |
-    Then user should be able to login to the system and store token
-    When User enter details for create shipping band for seller
-      | name   | description   | priceType   | price   | isUpdateAllowed   |
-      | <name> | <description> | <priceType> | <price> | <isUpdateAllowed> |
-    Then User should not be able to create shipping band for seller and user should get validation message
-      | User is not authorized to perform this action               |
-    Examples:
-      | name    | description                | priceType  | price  | isUpdateAllowed   |
-      | Vikrant | this is the desc for fixed | fixed      | 23     | true              |
+#  Scenario Outline: Login with valid registered user details as a System Admin and user use their token to create shipping band for seller
+#    When User is able to log into application
+#      | email                                 | password       |
+#      | systemadmin@marketcube.io             | 12345678n@N    |
+#    Then User should be able to login to the system and store token
+#    When User enter details for create shipping band for seller
+#      | name   | description   | priceType   | price   | isUpdateAllowed   |
+#      | <name> | <description> | <priceType> | <price> | <isUpdateAllowed> |
+#    Then User should not be able to create shipping band for seller and user should get validation message
+#      | User is not authorized to perform this action               |
+#    Examples:
+#      | name    | description                | priceType  | price  | isUpdateAllowed   |
+#      | Vikrant | this is the desc for fixed | fixed      | 23     | true              |
 
 
 

@@ -7,7 +7,7 @@ Feature: API - Count list of orders
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki432    |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters details to count of list orders
       | userId   | filter         |
       | <userId> | <filter>       |
@@ -43,7 +43,7 @@ Feature: API - Count list of orders
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki4321   |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters details to count of list orders
       | userId   | filter         |
       | <userId> | <filter>       |
@@ -63,7 +63,7 @@ Feature: API - Count list of orders
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters details to count of list orders
       | userId   | filter         |
       | <userId> | <filter>       |

@@ -4,22 +4,7 @@ Feature: Login as System admin
          Login as seller
          User wants to count list of users
 
-  Scenario Outline: Login with valid registered user details as a system admin and user wants to request for count list of users (seller or vendor)
-    When User is able to log into application
-      | email                         | password     |
-      | systemadmin@marketcube.io     | 12345678n@N  |
-    Then User should be able to login to the system and store token
-    And user enters the userRole field and filter field of requester
-      | userRole     | filter   |
-      | <userRole>   | <filter> |
-    And user make a request to fetch  the count of users
-    Then user should be able to get the list of user that he requested
-    Examples:
-      |  userRole       | filter              |
-      |  vendor         |    pending          |
-      |  seller         |    pending          |
-      |  vendor         |    approved         |
-      |  seller         |    approved         |
+
 
 
 
@@ -79,4 +64,19 @@ Feature: Login as System admin
       |  vendor         |    approved         |
       |  seller         |    approved         |
 
-
+#  Scenario Outline: Login with valid registered user details as a system admin and user wants to request for count list of users (seller or vendor)
+#    When User is able to log into application
+#      | email                         | password     |
+#      | systemadmin@marketcube.io     | 12345678n@N  |
+#    Then User should be able to login to the system and store token
+#    And user enters the userRole field and filter field of requester
+#      | userRole     | filter   |
+#      | <userRole>   | <filter> |
+#    And user make a request to fetch  the count of users
+#    Then user should be able to get the list of user that he requested
+#    Examples:
+#      |  userRole       | filter              |
+#      |  vendor         |    pending          |
+#      |  seller         |    pending          |
+#      |  vendor         |    approved         |
+#      |  seller         |    approved         |

@@ -1,38 +1,21 @@
 package net.mc.tools.services;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.jayway.restassured.response.Response;
 import net.mc.tools.helpers.ApiHelper;
-import net.mc.tools.models.commission.request.CommissionRequestModel;
-import net.mc.tools.models.updateTermsSetting.request.PaymentTerms;
 import net.mc.tools.models.updateTermsSetting.request.UpdateTermsSettingForSellerRequestModel;
 
-import java.util.List;
+public class UpdateTermsSettingsSellerService extends ApiHelper
+{
 
-public class UpdateTermsSettingsSellerService extends ApiHelper {
+    public static Response UpdateTermsSettingsSellerRequest(UpdateTermsSettingForSellerRequestModel updateTermsSettingForSellerRequestModel, String token)
+    {
+        Response response;
+        System.out.println("Json Data Before hitting api  is "+gson().toJson(updateTermsSettingForSellerRequestModel)+" Token Message is : ( "+token+")");
 
-    public static Gson gson;
+        response = authWithToken(token).body(gson().toJson(updateTermsSettingForSellerRequestModel)).put("/user/term");
+        System.out.println("Json Data After hitting api  is "+response.body().prettyPrint());
 
-    public static Response requestWithToken(UpdateTermsSettingForSellerRequestModel updateTermsSetting, String token) {
-        Response loginUserResponse;
-
-        loginUserResponse = authWithToken(token).body(gson().toJson(updateTermsSetting)).put("/user/term");
-
-        return loginUserResponse;
-    }
-
-    //Specify all one time default Gson config
-    public static Gson gson() {
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        gson = gson(gsonBuilder);
-        return gson;
-    }
-
-    //Custom Gson config to override Default Gson  configuration
-    public static Gson gson(GsonBuilder gsonBuilder) {
-        gson = gsonBuilder.create();
-        return gson;
+        return response;
     }
 
 

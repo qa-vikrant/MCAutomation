@@ -3,11 +3,14 @@ Feature: API - Login as a registered user
   As a registered user
   I want to delete shipping band for seller
 
+  #  Api not work ----discussion with Naman sir
+
+
   Scenario: Login with valid registered user details and update shipping setting for seller
     When User is able to log into application
       | email                                 | password       |
       | vikrant.singh@successive.tech         | HaiVikki12     |
-    Then user should be able to login to the system and store token
+    Then User should be able to login to the system and store token
     When User enters shipping setting details to update
       | term | type | amount | vendorShipping |
       |23 | free | 223 |  |
