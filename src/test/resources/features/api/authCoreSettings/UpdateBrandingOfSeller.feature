@@ -4,7 +4,7 @@ Feature: API - Update branding of seller
   I want to update branding of seller on marketcube
 
 
-    #  Api not work ----discussion with Naman sir
+    #  discussion with Naman sir
 
 
   Scenario: Update branding of seller with valid values

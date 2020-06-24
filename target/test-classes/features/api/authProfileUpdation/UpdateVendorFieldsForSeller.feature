@@ -1,7 +1,7 @@
 Feature: API---  Auth - To update vendor fields for seller--  put--  /user/vendor
 
 
-        As a seller
+        As a User(Seller)
         user wants to update their associated vendor information fields
 
   Scenario Outline: Login with valid registered user details as a seller and user make a request to enable or disable user Brand information, Shipping information and Payment information fields

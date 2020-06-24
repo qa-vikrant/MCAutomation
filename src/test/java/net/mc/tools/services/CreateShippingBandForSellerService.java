@@ -9,11 +9,11 @@ import java.util.List;
 public class CreateShippingBandForSellerService extends ApiHelper
 {
 
-    public static Response CreateShippingBandRequest(List<CreateShippingBandForSellerRequestModel> createShippingBandForSellerRequestModelList, String token)
+    public static Response CreateShippingBandRequest(CreateShippingBandForSellerRequestModel createShippingBandForSellerRequestModel, String token)
     {
-        System.out.println("Json Data Before hitting api  is "+gson().toJson(createShippingBandForSellerRequestModelList.get(0))+" Token Message is : ( "+token+")");
+        System.out.println("Json Data Before hitting api  is "+gson().toJson(createShippingBandForSellerRequestModel)+" Token Message is : ( "+token+")");
         Response response;
-        response = authWithToken(token).body(gson().toJson(createShippingBandForSellerRequestModelList.get(0))).post("user/shipping-band");
+        response = authWithToken(token).body(gson().toJson(createShippingBandForSellerRequestModel)).post("user/shipping-band");
         System.out.println("Json Data After hitting api  is "+response.body().prettyPrint());
         return response;
     }

@@ -2,9 +2,9 @@ package net.mc.tools.models.shipping.request;
 
 public class CreateShippingBandForSellerRequestModel {
 
-    private String price;
+    private Integer price;
 
-    private String isUpdateAllowed;
+    private Boolean isUpdateAllowed;
 
     private String name;
 
@@ -12,22 +12,22 @@ public class CreateShippingBandForSellerRequestModel {
 
     private String description;
 
-    public String getPrice ()
+    public Integer getPrice ()
     {
         return price;
     }
 
-    public void setPrice (String price)
+    public void setPrice (Integer price)
     {
         this.price = price;
     }
 
-    public String getIsUpdateAllowed ()
+    public Boolean getIsUpdateAllowed ()
     {
         return isUpdateAllowed;
     }
 
-    public void setIsUpdateAllowed (String isUpdateAllowed)
+    public void setIsUpdateAllowed (Boolean isUpdateAllowed)
     {
         this.isUpdateAllowed = isUpdateAllowed;
     }
