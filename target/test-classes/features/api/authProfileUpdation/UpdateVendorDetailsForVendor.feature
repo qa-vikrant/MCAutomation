@@ -62,6 +62,8 @@ Feature: API --  Auth - To update vendor details for vendor---  put--  /user/ven
       | 5e29912fbfec74a0272e9a92         | 5e29a688fd2be8001271fb99      | vikrant vendor trial1      |
 #Bug when login as a  seller or system admin ,user wants to update the details of vendor ,then it should be expected error message as a "User is not authorized to perform this action." but it gives actual error messages as a "errorHelper.invalidUser is not a function".
 
+
+
 #  Scenario Outline: Login with valid registered user details as a System Admin and user make a request to update vendor fields
 #    When User is able to log into application
 #      | email                                 | password     |

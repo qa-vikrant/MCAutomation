@@ -2,88 +2,101 @@ package net.mc.tools.models.shipping.request;
 
 public class ManageShippingDetailsRequestModel
 {
-        private String amount;
+    private Integer amount;
 
-        private String isFreeForCustomer;
+    private Boolean isFreeForCustomer;
 
-        private String[] vendorIds;
+    private Boolean isHideDescription;
 
-        private String term;
+    private String[] vendorIds;
 
-        private String type;
+    private String term;
 
-        private String allowVendor;
+    private String type;
 
-        private ShippingPerVendor shippingPerVendor;
+    private String allowVendor;
 
-        public String getAmount ()
-        {
-            return amount;
-        }
+    private ShippingPerVendor shippingPerVendor;
 
-        public void setAmount (String amount)
-        {
-            this.amount = amount;
-        }
+    public Integer getAmount ()
+    {
+        return amount;
+    }
 
-        public String getIsFreeForCustomer ()
-        {
-            return isFreeForCustomer;
-        }
+    public void setAmount (Integer amount)
+    {
+        this.amount = amount;
+    }
 
-        public void setIsFreeForCustomer (String isFreeForCustomer)
-        {
-            this.isFreeForCustomer = isFreeForCustomer;
-        }
+    public Boolean getIsFreeForCustomer ()
+    {
+        return isFreeForCustomer;
+    }
 
-        public String[] getVendorIds ()
-        {
-            return vendorIds;
-        }
+    public void setIsFreeForCustomer (Boolean isFreeForCustomer)
+    {
+        this.isFreeForCustomer = isFreeForCustomer;
+    }
 
-        public void setVendorIds (String[] vendorIds)
-        {
-            this.vendorIds = vendorIds;
-        }
+    public Boolean getIsHideDescription ()
+    {
+        return isHideDescription;
+    }
 
-        public String getTerm ()
-        {
-            return term;
-        }
+    public void setIsHideDescription (Boolean isHideDescription)
+    {
+        this.isHideDescription = isHideDescription;
+    }
 
-        public void setTerm (String term)
-        {
-            this.term = term;
-        }
+    public String[] getVendorIds ()
+    {
+        return vendorIds;
+    }
 
-        public String getType ()
-        {
-            return type;
-        }
+    public void setVendorIds (String[] vendorIds)
+    {
+        this.vendorIds = vendorIds;
+    }
 
-        public void setType (String type)
-        {
-            this.type = type;
-        }
+    public String getTerm ()
+    {
+        return term;
+    }
 
-        public String getAllowVendor ()
-        {
-            return allowVendor;
-        }
+    public void setTerm (String term)
+    {
+        this.term = term;
+    }
 
-        public void setAllowVendor (String allowVendor)
-        {
-            this.allowVendor = allowVendor;
-        }
+    public String getType ()
+    {
+        return type;
+    }
 
-        public ShippingPerVendor getShippingPerVendor ()
-        {
-            return shippingPerVendor;
-        }
+    public void setType (String type)
+    {
+        this.type = type;
+    }
 
-        public void setShippingPerVendor (ShippingPerVendor shippingPerVendor)
-        {
-            this.shippingPerVendor = shippingPerVendor;
-        }
+    public String getAllowVendor ()
+    {
+        return allowVendor;
+    }
+
+    public void setAllowVendor (String allowVendor)
+    {
+        this.allowVendor = allowVendor;
+    }
+
+    public ShippingPerVendor getShippingPerVendor ()
+    {
+        return shippingPerVendor;
+    }
+
+    public void setShippingPerVendor (ShippingPerVendor shippingPerVendor)
+    {
+        this.shippingPerVendor = shippingPerVendor;
+    }
+
 
 }

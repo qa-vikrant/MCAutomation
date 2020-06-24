@@ -17,44 +17,33 @@ import static net.mc.tools.services.RegisterSupplierBySelfService.gson;
 
 public class CreateShippingBandForSellerSteps
 {
-    public static  String token = null;
     private Response jsonResponse;
     private ResponseCommonForAll responseCommonForAll;
-    private List<CreateShippingBandForSellerRequestModel> shippingBandForSellerRequestModel;
-       private static int i = 0;
+    private CreateShippingBandForSellerRequestModel createShippingBandForSellerRequestModel;
 
-    @When("^User enter details for create shipping band for seller$")
-    public void userEnterShippingBandDetails(List<CreateShippingBandForSellerRequestModel> shippingBandForSellerRequestModel)
+    @When("^User enters shipping band details$")
+    public void userEnterShippingBandDetails(List<CreateShippingBandForSellerRequestModel> createShippingBandForSellerRequestModelList)
     {
-        if(shippingBandForSellerRequestModel.get(0).getName().equalsIgnoreCase("Vikrant"))
+        this.createShippingBandForSellerRequestModel=createShippingBandForSellerRequestModelList.get(0);
+        if(createShippingBandForSellerRequestModelList.get(0).getName().equalsIgnoreCase("Harward"))
         {
-            shippingBandForSellerRequestModel.get(0).setName(shippingBandForSellerRequestModel.get(0).getName()+ RandomGenerator.randomAlphanumeric(5));
+            this.createShippingBandForSellerRequestModel.setName(createShippingBandForSellerRequestModelList.get(0).getName()+"-"+RandomGenerator.randomAlphanumeric(5));
         }
-        jsonResponse = CreateShippingBandForSellerService.CreateShippingBandRequest(shippingBandForSellerRequestModel,LoginSteps.token);
-
     }
 
-    @When("^User enter details for create shipping band for seller with already existed shipping band name$")
-    public void User_enter_details_for_create_shipping_band_for_seller_with_already_existed_shipping_band_name(List<CreateShippingBandForSellerRequestModel> shippingBandForSellerRequestModel)
+    @When("^User make a request to create shipping band$")
+    public void UserMakeRequestToCreateShippingBand()
     {
-        jsonResponse = CreateShippingBandForSellerService.CreateShippingBandRequest(shippingBandForSellerRequestModel,LoginSteps.token);
-
+        jsonResponse = CreateShippingBandForSellerService.CreateShippingBandRequest(createShippingBandForSellerRequestModel,LoginSteps.token);
     }
 
-    @When("^User enter details for create shipping band for seller with Incorrect/blank token field$")
-    public void User_enter_details_for_create_shipping_band_for_seller_with_Incorrectblank_token_field(List<CreateShippingBandForSellerRequestModel> shippingBandForSellerRequestModel)
-    {
-        this.shippingBandForSellerRequestModel=shippingBandForSellerRequestModel;
-
-    }
-    @When("^user make a request to request to create shipping band with Incorrect/blank token field in form of without login credentials$")
+    @When("^User make a request to request to create shipping band with Incorrect/blank token field in form of without login credentials$")
     public void user_make_a_request_to_request_to_create_shipping_band_with_Incorrectblank_token_field_in_form_of_without_login_credentials(List<TokenMessageRequestModel> tokenMessageRequestModelList)
     {
-        jsonResponse = CreateShippingBandForSellerService.CreateShippingBandRequest(shippingBandForSellerRequestModel,tokenMessageRequestModelList.get(0).gettoken());
-
+        jsonResponse = CreateShippingBandForSellerService.CreateShippingBandRequest(createShippingBandForSellerRequestModel,tokenMessageRequestModelList.get(0).gettoken());
     }
 
-    @Then("^User should be able to create shipping band successfully for seller$")
+    @Then("^User should be able to create shipping band successfully$")
     public void userSuccessfullyCreateShippingBand()
     {
         Assert.assertTrue(jsonResponse.getStatusCode() == 200);
@@ -62,11 +51,18 @@ public class CreateShippingBandForSellerSteps
         Assert.assertEquals("ok" , responseCommonForAll.getStatus());
         Assert.assertEquals("true", responseCommonForAll.getData());
         jsonResponse=null;
+        responseCommonForAll=null;
+        createShippingBandForSellerRequestModel=null;
     }
 
-    @Then("^User should not be able to create shipping band for seller and user should get validation message$")
+    @Then("^User should not be able to create shipping band and user should get validation error message$")
     public void userValidateShippingBandErrorMsg(List<String> errorMessage)
     {
         HelperClass.ErrorValidationPage(jsonResponse,errorMessage);
     }
+
+
+
+
+
 }
