@@ -6,17 +6,12 @@ import net.mc.tools.models.shipping.request.DeleteShippingRuleRequestModel;
 
 public class DeleteShippingRuleService extends ApiHelper
 {
-
-
-
-    public static Response deleteShippingRuleReq(DeleteShippingRuleRequestModel deleteShippingRuleRequestModel, String token)
+    public static Response deleteShippingRuleRequest(DeleteShippingRuleRequestModel deleteShippingRuleRequestModel, String token)
     {
         Response response;
-
-        System.out.println(" Json Data Before Hitting API : "+gson().toJson(deleteShippingRuleRequestModel)+" Token Message is : ("+token+")");
-
+        System.out.println("Json Data Before hitting api  is "+gson().toJson(deleteShippingRuleRequestModel)+" Token Message is : ( "+token+")");
         response = authWithToken(token).body(gson().toJson(deleteShippingRuleRequestModel)).delete("user/shipping-rule");
-
+        System.out.println("Json Data After hitting api  is "+response.body().prettyPrint());
         return response;
     }
 

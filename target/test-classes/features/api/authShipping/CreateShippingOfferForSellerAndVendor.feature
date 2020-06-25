@@ -1,11 +1,7 @@
-     Feature: API  Auth - Create shipping offer for seller/vendor - post-  /user/shipping-offer
+Feature: API  Auth - Create shipping offer for seller/vendor - post-  /user/shipping-offer
 
      As a registered user
      I want to create the shipping offer for seller
-
-     As a registered user
-     I want to create the shipping offer for vendor
-
 
     Scenario Outline: Login with valid registered user details as  a seller and user wants to create shipping offer for seller based on products
       When User is able to log into application

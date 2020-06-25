@@ -16,7 +16,7 @@ public class CreateShippingRuleForSellerRequestModel {
 
     private String description;
 
-    private String isShippingDisabled;
+    private Boolean isShippingDisabled;
 
     public String getCondition ()
     {
@@ -88,12 +88,12 @@ public class CreateShippingRuleForSellerRequestModel {
         this.description = description;
     }
 
-    public String getIsShippingDisabled ()
+    public Boolean getIsShippingDisabled ()
     {
         return isShippingDisabled;
     }
 
-    public void setIsShippingDisabled (String isShippingDisabled)
+    public void setIsShippingDisabled (Boolean isShippingDisabled)
     {
         this.isShippingDisabled = isShippingDisabled;
     }

@@ -19,7 +19,7 @@ public class CreateShippingRuleForSellerSteps
 {
     private Response jsonResponse;
     private ResponseCommonForAll responseCommonForAll;
-    CreateShippingRuleForSellerRequestModel createRuleObject=new CreateShippingRuleForSellerRequestModel();
+    CreateShippingRuleForSellerRequestModel createShippingRuleForSellerRequestModel=new CreateShippingRuleForSellerRequestModel();
     private String[] productIds=new String[1];
     private String[] destinationCodes=new String[1];
 
@@ -30,6 +30,9 @@ public class CreateShippingRuleForSellerSteps
         responseCommonForAll = gson().fromJson(jsonResponse.body().prettyPrint(), ResponseCommonForAll.class);
         Assert.assertEquals("ok" , responseCommonForAll.getStatus());
         Assert.assertEquals("true", responseCommonForAll.getData());
+        createShippingRuleForSellerRequestModel=null;
+        jsonResponse=null;
+        responseCommonForAll=null;
     }
 
     @Then("^User should not be able to create new shipping rule and user should gets validation error message$")
@@ -42,58 +45,53 @@ public class CreateShippingRuleForSellerSteps
     @When("^User enters destination details$")
     public void user_enters_destination_details(List<String> destinationCodesStringList) throws Exception
     {
-        if (destinationCodesStringList.get(0).equals("UK"))
+        if (destinationCodesStringList.get(0).equals("ES"))
         {
-        this.destinationCodes[0]=RandomGenerator.randomAlphabetic(2);
-         }
-        createRuleObject.setDestinationCodes(destinationCodes);
+            this.destinationCodes[0]=destinationCodesStringList.get(0);
+
+        }
+        createShippingRuleForSellerRequestModel.setDestinationCodes(destinationCodes);
+        destinationCodes=null;
     }
 
     @When("^User enters product details$")
     public void user_enters_product_details(List<String> productIdsStringList) throws Exception
     {
-        if (productIdsStringList.get(0).equals("12DFF344DFFFF1"))
+        if (productIdsStringList.get(0).equals("5ef2d8ea1ff87400116ebda7"))
         {
-            this.productIds[0]=RandomGenerator.randomAlphanumeric(10)+productIdsStringList.get(0);
+            this.productIds[0]=productIdsStringList.get(0);
         }
-        createRuleObject.setProductIds(productIds);
+        createShippingRuleForSellerRequestModel.setProductIds(productIds);
+        productIds=null;
     }
 
 
     @When("^User enters the shippingBandID details,Price details,shipping rule condition and description of shipping rule$")
-    public void user_enters_the_shippingBandID_details_Price_details_shipping_rule_condition_and_description_of_shipping_rule(List<CreateShippingRuleForSellerRequestModel> createShippingRuleForSellerRequestModelList) throws Exception
+    public void user_enters_the_shippingBandID_detailsFor_shipping_rule(List<CreateShippingRuleForSellerRequestModel> createShippingRuleForSellerRequestModelList) throws Exception
     {
-        createRuleObject.setCondition(createShippingRuleForSellerRequestModelList.get(0).getCondition());
-        createRuleObject.setDescription(createShippingRuleForSellerRequestModelList.get(0).getDescription());
-        createRuleObject.setPrice(createShippingRuleForSellerRequestModelList.get(0).getPrice());
-        createRuleObject.setPriceType(createShippingRuleForSellerRequestModelList.get(0).getPriceType());
-        createRuleObject.setShippingBandId(createShippingRuleForSellerRequestModelList.get(0).getShippingBandId());
-        createRuleObject.setIsShippingDisabled(createShippingRuleForSellerRequestModelList.get(0).getIsShippingDisabled());
+        this.createShippingRuleForSellerRequestModel=createShippingRuleForSellerRequestModelList.get(0);
     }
 
 
     @When("^User make a request to create new shipping rules based on the destination$")
     public void User_make_a_request_to_create_new_shipping_rules_based_on_the_destination() throws Exception
     {
-        createRuleObject.setProductIds(null);
-        jsonResponse= CreateShippingRuleForSellerService.req(createRuleObject,LoginSteps.token);
-        createRuleObject=null;
+        createShippingRuleForSellerRequestModel.setProductIds(null);
+        jsonResponse= CreateShippingRuleForSellerService.CreateShippingRuleRequest(createShippingRuleForSellerRequestModel,LoginSteps.token);
     }
 
     @When("^User make a request to create new shipping rules based on the products$")
-    public void User_make_a_request_to_create_new_shipping_rules_based_on_the_products() throws Exception
+    public void Usermakearequesttocreatenewshippingrulesbasedontheproducts() throws Exception
     {
-        createRuleObject.setDestinationCodes(null);
-        jsonResponse= CreateShippingRuleForSellerService.req(createRuleObject,LoginSteps.token);
-        createRuleObject=null;
+        createShippingRuleForSellerRequestModel.setDestinationCodes(null);
+        jsonResponse= CreateShippingRuleForSellerService.CreateShippingRuleRequest(createShippingRuleForSellerRequestModel,LoginSteps.token);
     }
 
     @When("^User make a request to create new shipping rules based on the destination with Incorrect/blank token field in form of without login credentials$")
-    public void User_make_a_request_to_create_new_shipping_rules_based_on_the_productswithIncorrectToken(List<TokenMessageRequestModel> tokenMessageRequestModelList) throws Exception
+    public void UsermakearequesttocreatenewshippingrulesbasedontheproductswithIncorrectToken(List<TokenMessageRequestModel> tokenMessageRequestModelList) throws Exception
     {
-        createRuleObject.setProductIds(null);
-        jsonResponse= CreateShippingRuleForSellerService.req(createRuleObject,tokenMessageRequestModelList.get(0).gettoken());
-        createRuleObject=null;
+        createShippingRuleForSellerRequestModel.setProductIds(null);
+        jsonResponse= CreateShippingRuleForSellerService.CreateShippingRuleRequest(createShippingRuleForSellerRequestModel,tokenMessageRequestModelList.get(0).gettoken());
     }
 
 
