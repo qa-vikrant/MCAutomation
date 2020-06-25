@@ -58,15 +58,17 @@ Feature: Auth - Create shipping band for seller -  post -  /user/shipping-band
       | Invalid priceType provided.                                       |
       | Please provide price for shipping band or select Free as shipping |
       | Please provide price for shipping band or select Free as shipping |
+      | Please enter 0 for Free priceType, should not be more than 0      |
     Examples:
       | name         |  description                 | priceType        | price      | isUpdateAllowed   |
       |              | this is the desc for fixed   | fixed            | 23         | true              |
-      | Harward      |                              | free             | 23         | true              |
-      | Harward      | sfdsdf                       |                  | 23         | true              |
-      | Harward      | sfdsdf                       | Nnnnnnnnnnnnn    | 23         | true              |
-      | Harward      | sfdsdf                       | 1111122222222    | 23         | true              |
+      | Harward      |                              | fixed            | 23         | true              |
+      | Harward      | this is the desc for fixed   |                  | 23         | true              |
+      | Harward      | this is the desc for fixed   | Nnnnnnnnnnnnn    | 23         | true              |
+      | Harward      | this is the desc for fixed   | 1111122222222    | 23         | true              |
       | Harward      | this is the desc for fixed   | fixed            |            | false             |
       | Harward      | this is the desc for fixed   | fixed            | 0          | false             |
+      | Harward      | this is the desc for fixed   | free             | 23         | false             |
 #bug when login as a seller and seller wants to create a shipping band without "isUpdateAllowed" field then it should be expected error message as a "IsUpdateAllowed is required." but in actual scenario it accepted the requests without IsUpdateAllowed field and give status ok and data true
 #bug also for invalid priceType field
 #bug also for blank price field
@@ -115,6 +117,18 @@ Feature: Auth - Create shipping band for seller -  post -  /user/shipping-band
       | token                           |
       |  sgshhshhshhshshhsh             |
       |                                 |
+
+  Scenario:Login with valid registered user details as a seller and without isUpdateAllowed field user wants to create shipping band for seller
+    When User is able to log into application
+      | email                                 | password       |
+      | vikrant.singh+250@successive.tech     | 123!45@Vik     |
+    Then User should be able to login to the system and store token
+    And User enters shipping band details
+      | name    | description                    | priceType   | price   | isUpdateAllowed   |
+      | Harward | without isUpdateAllowed field  | fixed       | 23      |                   |
+    And Without isUpdateAllowed field user make a request to create shipping band
+    Then User should not be able to create shipping band and user should get validation error message
+      | IsUpdateAllowed is required.   |
 
 #---------------------------API HIT on UI--------------------------------------------------
 #    {"name":"stark2","price":0,"description":"6766","priceType":"free"}

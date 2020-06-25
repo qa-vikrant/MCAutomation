@@ -29,6 +29,10 @@ public class CreateShippingBandForSellerSteps
         {
             this.createShippingBandForSellerRequestModel.setName(createShippingBandForSellerRequestModelList.get(0).getName()+"-"+RandomGenerator.randomAlphanumeric(5));
         }
+        if(createShippingBandForSellerRequestModelList.get(0).getDescription().equals("this is the desc for fixed"))
+        {
+            this.createShippingBandForSellerRequestModel.setDescription(createShippingBandForSellerRequestModelList.get(0).getDescription()+HelperClass.getApiHitTime());
+        }
     }
 
     @When("^User make a request to create shipping band$")
@@ -62,7 +66,15 @@ public class CreateShippingBandForSellerSteps
     }
 
 
-
+    @When("^Without isUpdateAllowed field user make a request to create shipping band$")
+    public void WithoutIsUpdateAllowedFieldUserMakeRequestToCreateShippingBand()
+    {
+        if (this.createShippingBandForSellerRequestModel.getIsUpdateAllowed().equals(false))
+        {
+            this.createShippingBandForSellerRequestModel.setIsUpdateAllowed(null);
+        }
+        jsonResponse = CreateShippingBandForSellerService.CreateShippingBandRequest(createShippingBandForSellerRequestModel,LoginSteps.token);
+    }
 
 
 }

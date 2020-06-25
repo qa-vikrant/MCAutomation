@@ -1,73 +1,56 @@
 Feature:  Auth - Delete shipping rule for seller -  delete - /user/shipping-rule
 
-        As a registered seller
-        I want to delete shipping rule for seller
+        As a registered User(Seller/Vendor)
+        User want to delete shipping rule for seller
 
-        As a registered vendor
-        I want to delete shipping rule for vendor
-
- Scenario Outline: Login with valid registered user details as a seller and user wants to delete their own shipping rule
+  Scenario Outline: Login with valid registered user details as a seller and user wants to delete their own shipping rule
     When User is able to log into application
       | email                                 | password       |
-      | vikrant.singh@successive.tech         | HaiVikki12     |
+      | vikrant.singh+250@successive.tech     | 123!45@Vik     |
     Then User should be able to login to the system and store token
     When User enters shippingRuleId
       |   shippingRuleId              |
       |  <shippingRuleId>             |
-    And user make a request to delete shipping rule
+    And User make a request to delete shipping rule
     Then User should be able to delete shipping rule
    Examples:
         | shippingRuleId             |
-        | 5e8ac6210167b2001a5a50fb   |
-        | 5e8ac6210167b2001a5a50fc   |
-        | 5e841fc01d429c0012f83abe   |
-        | 5e841fc31d429c0012f83ac1   |
-        | 5e848f38768bd6001301781f   |
-        | 5e8ad6e8c41be8001aef32cc   |
-        | 5e8ad6e8c41be8001aef32cd   |
-        | 5e8ad738c41be8001aef32d4   |
-
-
-
-
+        | 5ef4f158da7f41001295c729   |
 
   Scenario: Login with valid registered user details as a vendor and user wants to delete their own shipping rule
     When User is able to log into application
       | email                                 | password       |
-      | vikrant.singh@successive.tech         | 1234567890     |
+      | vikrant.singh+251@successive.tech     | 1234@Vik       |
+    Then User should be able to login to the system and store token
+    When User enters shippingRuleId
+      | shippingRuleId             |
+      | 5ef4f1396d64340013794865   |
+    And User make a request to delete shipping rule
+    Then User should be able to delete shipping rule
+
+  Scenario: Login with valid registered user details as a system admin and user wants to delete shipping rule of seller
+    When User is able to log into application
+      | email                                 | password       |
+      | systemadmin@marketcube.io             | 12345678n@N    |
     Then User should be able to login to the system and store token
     When User enters shippingRuleId
       | shippingRuleId             |
       | 5e69ef6c558f0c001af94fdc   |
-    And user make a request to delete shipping rule
-    Then User should be able to delete shipping rule
-
-
-
-#  Scenario: Login with valid registered user details as a system admin and user wants to delete shipping rule of seller
-#    When User is able to log into application
-#      | email                                 | password       |
-#      | systemadmin@marketcube.io             | 12345678n@N    |
-#    Then User should be able to login to the system and store token
-#    When User enters shippingRuleId
-#      | shippingRuleId             |
-#      | 5e69ef6c558f0c001af94fdc   |
-#    And user make a request to delete shipping rule
-#    Then User should not be able to delete shipping rule and user should get validation error message
-#      |  User is not authorized to perform this action |
-
+    And User make a request to delete shipping rule
+    Then User should not be able to delete shipping rule and user should get validation error message
+      |  User is not authorized to perform this action |
 
   Scenario Outline: Login with valid registered user details as a seller and without follow field validation user wants to delete shipping Rule for seller
     When User is able to log into application
       | email                                 | password       |
-      | vikrant.singh@successive.tech         | HaiVikki12     |
+      | vikrant.singh+250@successive.tech     | 123!45@Vik     |
     Then User should be able to login to the system and store token
     When User enters shippingRuleId
       | shippingRuleId          |
       |  <shippingRuleId>       |
-    And user make a request to delete shipping rule
+    And User make a request to delete shipping rule
     Then User should not be able to delete shipping rule and user should get validation error message
-      |  ShippingRuleId is required.  |
+      |  ShippingRuleId is required.               |
       | Invalid ShippingRuleId provided.           |
       | Invalid ShippingRuleId provided.           |
       | Invalid ShippingRuleId  provided.          |
@@ -83,13 +66,53 @@ Feature:  Auth - Delete shipping rule for seller -  delete - /user/shipping-rule
     When User enters shippingRuleId
       | shippingRuleId             |
       | 5e69ef6c558f0c001af94fdc   |
-    When user make a request to request to delete shipping rule with Incorrect/blank token field in form of without login credentials
+    When User make a request to request to delete shipping rule with Incorrect/blank token field in form of without login credentials
       |  token                      |
       | <token>                     |
     Then User should not be able to delete shipping rule and user should get validation error message
       | Invalid token provided          |
-      | Invalid token provided          |
+      | Token is required.              |
     Examples:
       | token                           |
       |  sgshhshhshhshshhsh             |
       |                                 |
+
+  Scenario Outline: Login with valid registered user details as a seller and user wants to delete shipping rule of another seller
+    When User is able to log into application
+      | email                                 | password       |
+      | vikrant.singh+350@successive.tech     | 123!45@Vik     |
+    Then User should be able to login to the system and store token
+    When User enters shippingRuleId
+      |   shippingRuleId              |
+      |  <shippingRuleId>             |
+    And User make a request to delete shipping rule
+    Then User should not be able to delete shipping rule and user should get validation error message
+      | Invalid ShippingRuleId provided.           |
+    Examples:
+      | shippingRuleId             |
+      | 5ef4f15dda7f41001295c72d   |
+
+  Scenario: Login with valid registered user details as a vendor and user wants to delete shipping rule of another vendor
+    When User is able to log into application
+      | email                                 | password       |
+      | vikrant.singh+351@successive.tech     | 1234@Vik       |
+    Then User should be able to login to the system and store token
+    When User enters shippingRuleId
+      | shippingRuleId             |
+      | 5ef4f13b6d64340013794866   |
+    And User make a request to delete shipping rule
+    Then User should not be able to delete shipping rule and user should get validation error message
+      | Invalid ShippingRuleId provided.           |
+
+
+  Scenario: Login with valid registered user details as a vendor and user wants to delete shipping rule of their associated seller
+    When User is able to log into application
+      | email                                 | password       |
+      | vikrant.singh+351@successive.tech     | 1234@Vik       |
+    Then User should be able to login to the system and store token
+    When User enters shippingRuleId
+      | shippingRuleId             |
+      | 5ef4f15bda7f41001295c72c   |
+    And User make a request to delete shipping rule
+    Then User should not be able to delete shipping rule and user should get validation error message
+      | Invalid ShippingRuleId provided.           |

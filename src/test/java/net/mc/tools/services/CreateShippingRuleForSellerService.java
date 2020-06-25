@@ -10,30 +10,12 @@ import java.util.List;
 
 public class CreateShippingRuleForSellerService extends ApiHelper
 {
-
-    public static Gson gson;
-
-    public static Response req(CreateShippingRuleForSellerRequestModel createShippingRuleForSellerRequestModel, String token)
+    public static Response CreateShippingRuleRequest(CreateShippingRuleForSellerRequestModel createShippingRuleForSellerRequestModel, String token)
     {
         Response response;
-        System.out.println(gson().toJson(createShippingRuleForSellerRequestModel));
+        System.out.println("Json Data Before hitting api  is "+gson().toJson(createShippingRuleForSellerRequestModel)+" Token Message is : ( "+token+")");
         response = authWithToken(token).body(gson().toJson(createShippingRuleForSellerRequestModel)).post("user/shipping-rule");
-
+        System.out.println("Json Data After hitting api  is "+response.body().prettyPrint());
         return response;
     }
-
-    //Specify all one time default Gson config
-    public static Gson gson() {
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        gson = gson(gsonBuilder);
-        return gson;
-    }
-
-    //Custom Gson config to override Default Gson  configuration
-    public static Gson gson(GsonBuilder gsonBuilder) {
-        gson = gsonBuilder.create();
-        return gson;
-    }
-
-
 }

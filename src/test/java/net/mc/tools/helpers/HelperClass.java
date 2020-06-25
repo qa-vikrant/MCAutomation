@@ -81,7 +81,7 @@ public class HelperClass
     public static String getUpdatedTime()
     {
         AM_TO_PM_Calulator();
-        String date3="Updated:"+calendar.get(Calendar.DATE)+""+new DateFormatSymbols().getMonths()[calendar.get(Calendar.MONTH)]+","+calendar.get(Calendar.YEAR)+","+calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(Calendar.MINUTE)+""+AM_To_PM;
+        String date3=" Updated : "+calendar.get(Calendar.DATE)+""+new DateFormatSymbols().getMonths()[calendar.get(Calendar.MONTH)]+","+calendar.get(Calendar.YEAR)+","+calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(Calendar.MINUTE)+""+AM_To_PM;
         calendar=null;
         timestamp=null;
         return date3;

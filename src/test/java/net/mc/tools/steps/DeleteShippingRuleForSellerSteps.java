@@ -20,25 +20,23 @@ public class DeleteShippingRuleForSellerSteps
     private ResponseCommonForAll responseCommonForAll;
     private DeleteShippingRuleRequestModel deleteShippingRuleRequestModel;
 
-
     @When("^User enters shippingRuleId$")
     public void userEnterShippingRuleId(List<DeleteShippingRuleRequestModel> deleteShippingRuleRequestModelList)
     {
        deleteShippingRuleRequestModel=deleteShippingRuleRequestModelList.get(0);
     }
 
-    @When("^user make a request to delete shipping rule$")
+    @When("^User make a request to delete shipping rule$")
     public void userRequestToDeleteShippingRuleId()
     {
-        jsonResponse = DeleteShippingRuleService.deleteShippingRuleReq(deleteShippingRuleRequestModel,LoginSteps.token);
-        deleteShippingRuleRequestModel=null;
+        jsonResponse = DeleteShippingRuleService.deleteShippingRuleRequest(deleteShippingRuleRequestModel,LoginSteps.token);
+
     }
 
-    @When("^user make a request to request to delete shipping rule with Incorrect/blank token field in form of without login credentials$")
+    @When("^User make a request to request to delete shipping rule with Incorrect/blank token field in form of without login credentials$")
     public void userRequestToDeleteShippingRuleIdwithInvalidToken(List<TokenMessageRequestModel> tokenMessageRequestModelList)
     {
-        jsonResponse = DeleteShippingRuleService.deleteShippingRuleReq(deleteShippingRuleRequestModel,tokenMessageRequestModelList.get(0).gettoken());
-        deleteShippingRuleRequestModel=null;
+        jsonResponse = DeleteShippingRuleService.deleteShippingRuleRequest(deleteShippingRuleRequestModel,tokenMessageRequestModelList.get(0).gettoken());
     }
 
     @Then("^User should be able to delete shipping rule$")
@@ -48,6 +46,9 @@ public class DeleteShippingRuleForSellerSteps
         responseCommonForAll = gson().fromJson(jsonResponse.body().prettyPrint(), ResponseCommonForAll.class);
         Assert.assertEquals("ok" , responseCommonForAll.getStatus());
         Assert.assertEquals("true", responseCommonForAll.getData());
+        deleteShippingRuleRequestModel=null;
+        jsonResponse=null;
+        responseCommonForAll=null;
     }
 
     @Then("^User should not be able to delete shipping rule and user should get validation error message$")
